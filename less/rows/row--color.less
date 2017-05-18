@@ -1,0 +1,62 @@
+
+.row--dark,
+[data-name="row"]:nth-child(n+3) .row[style] {
+    background-color: @color__primary;
+
+
+    h1,h2,h3,h4 {
+        color: #ffffff;
+    }
+
+
+    p, ul, li, ol, .p-font {
+        color: lighten(@color__p--text, 35%);
+    }
+}
+
+
+
+// Dark colours
+.row--dark {
+
+
+    .phone-number-link,
+    .social-link {
+        color: #ffffff;
+    }
+}
+
+
+// Accent Colours
+.row--accent {
+    background-color: #f7f7f7;
+}
+
+
+// Light Colours
+.row--light {
+    background-color: #ffffff;
+}
+
+
+// Row Overlay
+[data-name="row"]:nth-child(n+3) .row[style]:after {
+    background-color: fade(@color__primary, 85%);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+// Bring widgets above overlay
+[data-name="row"]:nth-child(n+3) .row[style] {
+    background-blend-mode: luminosity;
+
+
+    .widget {
+        z-index: 1;
+    }
+}

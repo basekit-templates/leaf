@@ -1,0 +1,96 @@
+
+// -----------------------------------------
+// Row Template: Form Row
+// -----------------------------------------
+
+
+label {
+	color: @color__h2--text;
+	font-family: "acta-bold", playfair display, georgia, serif;
+	font-size: 20px;
+	line-height: 26px;
+	margin-bottom: 0;
+	position: relative;
+	transition: all 0.75s ease;
+}
+
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+
+
+     &:after {
+        background: fade(@color__primary, 17.5%);
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 1px;
+		height: 2px;
+		transition: all 0.25s ease;
+    }
+
+
+    &:hover,
+    &:focus,
+    &:active {
+        &:after {
+            background: @color__primary;
+        }
+    }
+
+
+    // Removes border
+    &:last-child:after,
+    &.js-recaptcha {
+        display: none;
+    }
+}
+
+
+input,
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
+.input--single-line {
+	background-color: transparent;
+    color: @color__p--text;
+    border: 0;
+    font-family: "questa-sans", helvetica neue, sans-serif;
+    font-size: 18px;
+    font-weight: @font__p--font-weight;
+    line-height: 28px;
+    outline: none;
+    padding: 10px 12px 18px 0;
+    position: relative;
+    width: 100%;
+
+    &:focus,
+    &:active,
+    &:hover {
+        border: 0;
+        box-shadow: none;
+        outline: 0;
+    }
+
+    &::-webkit-input-placeholder {
+        color: @color__body--background;
+    }
+
+
+    &::-moz-placeholder {
+        color: @color__body--background;
+    }
+
+
+    &:-ms-input-placeholder {
+        color: @color__body--background;
+    }
+
+
+    &::placeholder {
+        color: transparent;
+    }
+}

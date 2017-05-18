@@ -1,0 +1,321 @@
+
+// -----------------------------------------
+// Snippet Template: Fullscreen Navigation
+// -----------------------------------------
+
+
+
+// ------------------------------
+// #Template Navigation
+// ------------------------------
+
+
+[data-name="extendednavigation"] {
+    overflow: hidden;
+    position: static;
+}
+
+
+[data-name="row"]:first-child .row__container {
+    max-width: 100%;
+    padding: 0;
+
+    // Flex
+    .flex-display;
+    .align-items(flex-start);
+
+
+    &.navigation-open .navigation-body {;
+        width: 100%;
+        .transition(width 0.75s ease-in);
+        will-transform: transition;
+        z-index: 3;
+    }
+
+
+    // Closed
+    .navigation-body {
+        background: @color__navigation--background;
+        padding: 100px 40px 0;
+        pointer-events: all;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        .transition(width 0.75s ease-out);
+        width: 100px;
+        will-change: transition;
+        z-index: 1;
+
+        //Flex
+        .flex-display;
+        .align-items(center);
+        .justify-content(flex-start);
+
+        @media only screen and (max-width: 860px) {
+            width: 50px;
+        }
+
+
+         &:before {
+            content: "";
+            background-color: #ffffff;
+            width: 500px;
+            right: -180px;
+            position: absolute;
+            top: 0;
+            transform: skew(15deg);
+            bottom: 0;
+
+            @media only screen and (max-width: 860px) {
+                right: -150px;
+                width: 300px;
+            }
+         }
+
+
+         &:after {
+            background: white;
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100vh;
+            width: 100%;
+         }
+    }
+
+
+    // So navigation aligns correctly
+    .navigation-list {
+        width: 100%;
+    }
+
+
+
+    // Navigation List
+    // ------------------------------
+
+
+    .navigation-list {
+        background-color: @color__navigation-list--background;
+        margin: 0;
+        text-align: left;
+    }
+
+
+
+    // Navigation Item
+    // ------------------------------
+
+
+    .navigation-item {
+        left: -100vw;
+        opacity: 0;
+        transition: left 0.3s ease, opacity 0.75s ease;
+        will-transform: transition;
+
+
+        &:hover .navigation-list--children {
+            opacity: 0;
+            height: 0;
+            visibility: hidden;
+        }
+    }
+
+
+    &.navigation-open .navigation-item {
+        display: block;
+        left: 0;
+        opacity: 1;
+        transition: left 0.3s ease, opacity 0.75s ease;
+        will-transform: transition;
+        white-space: nowrap;
+    }
+
+
+
+    // Navigation Link
+    // ------------------------------
+
+
+    .navigation-item {
+
+
+        .item-name {
+            color: @color__navigation--text;
+            font-family: "acta-display", georgia, serif;
+            font-size: @font__navigation--font-size;
+            line-height: @font__navigation--line-height;
+            padding: 10px 0;
+
+            @media @mobile {
+                padding: 6px 0;
+            }
+        }
+
+
+        // Selected / Hover / Active State
+        &.selected .item-name,
+        &:hover .item-name,
+        &:focus .item-name {
+            color: @color__navigation--text--selected;
+
+            @media @tablet {
+                color: @color__navigation--text--selected;
+            }
+        }
+    }
+
+
+
+
+    // Dropdown Menu
+    // ------------------------------
+
+
+    // Dropdown Arrow
+    .item-name--parent:after {
+        border: 5px solid transparent;
+        border-top-color: @color__navigation--text;
+        content: "";
+        display: inline-block;
+        margin-left: 6px;
+        vertical-align: middle;
+    }
+
+
+    // Dropdown Menu List
+    .navigation-list--children {
+        background-color: @color__navigation-item--background;
+        display: block;
+        opacity: 0;
+        overflow: hidden;
+        height: 0;
+        position: relative;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+        visibility: hidden;
+
+
+        // Dropdown Item Link
+        .item-name {
+            padding: 10px 15px;
+        }
+    }
+
+
+    // Dropdown Menu - Open
+    .navigation-item.folder-open .navigation-list--children {
+        display: block;
+        height: auto;
+        margin: 0 auto;
+        opacity: 1;
+        padding: 10px 0;
+        width: auto;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+        visibility: visible;
+
+        @media @mobile {
+            padding: 0;
+        }
+    }
+}
+
+
+
+    //  Navigation Toggle Button
+    // ------------------------------
+
+
+.navigation-toggle {
+    background-clip: content-box;
+    background-color: @color__navigation--text;
+    border-radius: 0;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 24px 15px 24px 5px;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    text-indent: -99999px;
+    z-index: 4;
+
+
+    @media only screen and (max-width: 700px) {
+        top: 20px;
+        left: 25px;
+    }
+
+
+    &:hover {
+        background-color: @color__navigation--text;
+    }
+
+
+    // Top and bottom navigation item bar
+	&:after,
+	&:before {
+	    background: @color__navigation--text;
+		content: "";
+		display: block;
+		margin-right: 0;
+		margin-left: 0;
+		position: absolute;
+		left: 5px;
+
+		height: 2px;
+		width: 30px;
+
+		@media @mobile {
+			height: 2px;
+		}
+    }
+
+
+    // Top bar
+	&:before {
+		top: 13px;
+	}
+
+	// Bottom bar
+	&:after {
+		bottom: 13px;
+	}
+
+
+	// Toggle Button open state
+    // ------------------------------
+
+	.open & {
+		position: relative;
+		z-index: 100000;
+		background-color: transparent;
+
+		&:before {
+			top: 23px;
+			background: red;
+			-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);
+			-o-transform: rotate(45deg); -ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+			@media @mobile {
+				top: 21px;
+			}
+
+		}
+		&:after {
+			bottom: 21px;
+			background: red;
+			-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg); -ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+	}
+}

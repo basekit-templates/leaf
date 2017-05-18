@@ -1,0 +1,78 @@
+
+// -----------------------------------------
+// Row Template: Hero Row
+// -----------------------------------------
+
+
+
+
+// Hero Row
+[data-name="row"]:nth-child(2) {
+
+
+    // Row container
+    .row__container {
+        .align-items(flex-start);
+        .justify-content(center);
+        max-width: 100%;
+        padding-top: 70px;
+        position: relative;
+        z-index: 2;
+    }
+
+
+    // Background image
+    .row {
+        background-image: url("http://55b558c7-resources.feature-rows-v1.cluster.basekit-ci.co.uk/2a70816/templates/032c5a0e0a02dec4c5d3dc2948c45ecc/images/feature.jpg") !important;
+        background-size: cover;
+        background-position: center;
+
+        @media only screen and (max-width: 860px) {
+            background-position: 75%;
+        }
+
+
+        @media only screen and (max-width: 700px) {
+            background-blend-mode: lighten;
+
+
+            &:after {
+                background-color: fade(@color__navigation--background, .55);
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+
+    // Add max width to content
+    .widget {
+        max-width: 650px;
+
+        @media only screen and (max-width: 1024px) {
+            max-width: 500px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            max-width: 90vw;
+        }
+    }
+
+
+    // Heading color
+    h1,
+    h2,
+    h3 {
+        color: @color__primary;
+    }
+
+
+    // Paragraph color
+    p {
+        color: @color__p--text;
+    }
+}

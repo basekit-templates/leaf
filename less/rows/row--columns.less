@@ -1,0 +1,120 @@
+
+// -------------------------------------
+//  Responsive Columns
+// -------------------------------------
+
+
+
+
+//  Responsive Columns Flex
+// -------------------------------------
+
+
+.responsivecolumns {
+    .box-sizing(border-box);
+    .flex-display;
+    .flex-direction(row);
+    .flex(0 1 auto);
+    .flex-wrap(nowrap);
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+
+    @media only screen and (max-width: 925px) {
+        .flex-wrap(wrap);
+    }
+}
+
+
+// Remove padding
+[data-name="responsivecolumns"] {
+    padding: 0 !important;
+}
+
+
+
+
+//  Responsive Columns Widths
+// -------------------------------------
+
+
+.responsivecolumns {
+
+
+    // Column margin and dropzone min height
+    .column {
+        margin-right: 5%;
+        min-height: 40px;
+        position: relative;
+
+        @media only screen and (max-width: 700px) {
+            margin-bottom: 20px;
+        }
+
+
+        // Removes last columns margin
+        &:last-child {
+            margin-right: 0;
+
+            @media only screen and (max-width: 700px) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+// Two Columns
+.columns-two-left,
+.columns-two-right {
+    .flex-basis(47.5%);
+}
+
+
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right {
+    .flex-basis(30%);
+}
+
+
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .flex-basis(20%);
+}
+
+
+// Columns Breakpoints
+.columns-two-left,
+.columns-two-right,
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+
+
+    // Makes all columns two up on smaller screens
+    @media only screen and (max-width: 925px) {
+        .flex-basis(47.5%);
+
+
+        // Removes right sided margin
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+
+
+    // Makes all columns full width at small screens
+    @media only screen and (max-width: 700px) {
+        .flex-basis(100%);
+        margin-right: 0!important;
+    }
+}
