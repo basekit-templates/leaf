@@ -74,5 +74,12 @@
     // Paragraph color
     p {
         color: @color__p--text;
+        font-size: bkscale(@font__p--font-size, 1.1);
+        line-height bkscale(@font__p--line-height, 1.1);
+
+        @media only screen and (max-width: 700px) {
+            font-size: bkscale(@font__p--font-size, 1);
+            line-height bkscale(@font__p--line-height, 1);
+        }
     }
 }
