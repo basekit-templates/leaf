@@ -1,5 +1,5 @@
 // -----------------------------
-// BaseKit LESS Framework: v1.0
+// BaseKit SASS Framework: v1.0
 // -----------------------------
 
 // -----------------------------
@@ -452,14 +452,14 @@ a, abbr, acronym, address, b, big, cite, code, del, em, i, ins, kbd, mark, outpu
 samp, small, strike, strong, sub, sup, time, tt, u, var, dfn, dl, dt, dd, ol, ul, li,
 blockquote, h1, h2, h3, h4, h5, h6, p, pre, table, caption, tbody, tfoot, thead, tr,
 th, td, canvas, figure, figcaption, iframe, img, object {
-	background: transparent;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	line-height: 1.0;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  line-height: 1.0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
 
 /*
@@ -467,22 +467,22 @@ th, td, canvas, figure, figcaption, iframe, img, object {
 */
 
 li, dt, dd, p, pre, caption, th, td, figcaption {
-	line-height: 1.4;
+  line-height: 1.4;
 }
 caption, dl, dd, figcaption, figure, h1, h2, h3, h4, h5, h6, p, pre, table, ol, ul {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 blockquote, ol, ul {
-	margin-left: 1.8em;
+  margin-left: 1.8em;
 }
 code, pre, th, thead td {
-	background-color: #F5F5F5;
+  background-color: #F5F5F5;
 }
 code, pre, th, td {
-	color: #324354;
+  color: #324354;
 }
 pre, table, th, td {
-	border: 1px solid #E4E4E4;
+  border: 1px solid #E4E4E4;
 }
 
 /*
@@ -493,7 +493,7 @@ a {
   text-decoration: underline;
 }
 strong, b {
-  font-weight: bold;
+  font-weight: bolder;
 }
 em, i {
   font-style: italic;
@@ -713,10 +713,10 @@ figcaption {
 // --------------
 
 body {
-	font: 16px / 24px sans-serif;
-	font-weight: 400;
-	color: #333;
-	text-rendering: optimizelegibility;
+  font: 16px / 24px sans-serif;
+  font-weight: 400;
+  color: #333;
+  text-rendering: optimizelegibility;
 }
 
 *, *:before, *:after {
@@ -729,9 +729,29 @@ body {
 // --------------
 
 .bk-zone {
-  min-height: 80px;
+  min-height: 40px;
 }
 
+
+// Micro Clearfix
+// --------------
+
+// From CSS Wizardry' 'Inuit CSS' GitHub repository:
+// https://github.com/csswizardry/inuit.css/blob/master/generic/_clearfix.scss
+// Based on:
+// Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+
+@mixin clearfix {
+    &:after {
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
+
+.clearfix {
+    @include clearfix;
+}
 
 
 // Typography: Font Awesome Icons & BaseKit Font Swatches
@@ -741,11 +761,11 @@ body {
 
 @font-face {
     font-family: 'FontAwesome';
-    src: url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?v=4.2.0');
-    src: url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
-        url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'),
-        url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),
-        url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+    src: url('https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?v=4.2.0');
+    src: url('https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
+        url('https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'),
+        url('https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),
+        url('https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -857,64 +877,73 @@ body {
 
 // Body
 body {
-    background-color: @color__body--background;
-    font-family: @font__p--font-family;
-    font-size: @font__p--font-size;
-    font-weight: @font__p--font-weight;
-    line-height: @font__p--line-height;
-    letter-spacing: @font__p--letter-spacing;
-    color: @color__p--text;
+    background-color: $color-swatch1;
+    font-family: $font-swatch5-font-family;
+    font-size: $font-swatch5-font-size;
+    font-weight: $font-swatch5-font-weight;
+    line-height: $font-swatch5-line-height;
+    color: $font-swatch5-color;
+    letter-spacing: $font-swatch5-letter-spacing;
     -webkit-text-size-adjust: 100%;
 }
 
 // Heading 1
 h1, .heading--1 {
-    font-family: @font__h1--font-family;
-    font-size: @font__h1--font-size;
-    font-weight: @font__h1--font-weight;
-    line-height: @font__h1--line-height;
-    letter-spacing: @font__h1--letter-spacing;
-    color: @color__h1--text;
+    font-family: $font-swatch1-font-family;
+    font-weight: $font-swatch1-font-weight;
+    color: $font-swatch1-color;
+    line-height: $font-swatch1-line-height;
+    letter-spacing: $font-swatch1-letter-spacing;
+    font-size: $font-swatch1-font-size;
 }
 
 // Heading 2
 h2, .heading--2 {
-    font-family: @font__h2--font-family;
-    font-size: @font__h2--font-size;
-    font-weight: @font__h2--font-weight;
-    line-height: @font__h2--line-height;
-    letter-spacing: @font__h2--letter-spacing;
-    color: @color__h2--text;
+    font-family: $font-swatch2-font-family;
+    font-size: $font-swatch2-font-size;
+    font-weight: $font-swatch2-font-weight;
+    line-height: $font-swatch2-line-height;
+    color: $font-swatch2-color;
+    letter-spacing: $font-swatch2-letter-spacing;
 }
 
 // Heading 3
 h3, .heading--3 {
-    font-family: @font__h3--font-family;
-    font-size: @font__h3--font-size;
-    font-weight: @font__h3--font-weight;
-    line-height: @font__h3--line-height;
-    letter-spacing: @font__h3--letter-spacing;
-    color: @color__h3--text;
+    font-family: $font-swatch3-font-family;
+    font-size: $font-swatch3-font-size;
+    font-weight: $font-swatch3-font-weight;
+    color: $font-swatch3-color;
+    line-height: $font-swatch3-line-height;
+    letter-spacing: $font-swatch3-letter-spacing;
 }
 
 // Heading 4
 h4, .heading--4 {
-    font-family: @font__h4--font-family;
-    font-size: @font__h4--font-size;
-    font-weight: @font__h4--font-weight;
-    line-height: @font__h4--line-height;
-    letter-spacing: @font__h4--letter-spacing;
-    color: @color__h4--text;
+    font-family: $font-swatch4-font-family;
+    font-size: $font-swatch4-font-size;
+    font-weight: $font-swatch4-font-weight;
+    line-height: $font-swatch4-line-height;
+    color: $font-swatch4-color;
+    letter-spacing: $font-swatch4-letter-spacing;
 }
 
 // Paragraph, List Elements, Blockquote
 p, .paragraph, ul, ol, li, blockquote {
-    font-family: @font__p--font-family;
-    font-size: @font__p--font-size;
-    font-weight: @font__p--font-weight;
-    line-height: @font__p--line-height;
-    letter-spacing: @font__p--letter-spacing;
-    color: @color__p--text;
+    font-family: $font-swatch5-font-family;
+    font-size: $font-swatch5-font-size;
+    font-weight: $font-swatch5-font-weight;
+    line-height: $font-swatch5-line-height;
+    color: $font-swatch5-color;
+    letter-spacing: $font-swatch5-letter-spacing;
+}
+
+@mixin paragraph {
+    font-family: $font-swatch5-font-family;
+    font-size: $font-swatch5-font-size;
+    font-weight: $font-swatch5-font-weight;
+    line-height: $font-swatch5-line-height;
+    color: $font-swatch5-color;
+    letter-spacing: $font-swatch5-letter-spacing;
 }
 
 // Typography Spacing
@@ -941,7 +970,7 @@ h1, h2, h3, h4, p {
 // ----------------------
 
 a {
-    color: @color__link--text;
+    color: $color-swatch2;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -962,7 +991,7 @@ blockquote {
     &:before {
         content:open-quote;
         font-family: georgia, sans-serif;
-        line-height: @font__p--line-height;
+        line-height: $font-swatch5-line-height;
     }
 }
 
@@ -974,12 +1003,12 @@ blockquote {
 // ---------------------
 
 .company-link {
-    font-family: @font__companyname--font-family;
-    font-size: @font__companyname--font-size;
-    font-weight: @font__companyname--font-weight;
-    line-height: @font__companyname--line-height;
-    letter-spacing: @font__companyname--letter-spacing;
-    color: @color__companyname--text;
+    font-family: $font-swatch10-font-family;
+    font-size: $font-swatch10-font-size;
+    font-weight: $font-swatch10-font-weight;
+    color: $font-swatch10-color;
+    line-height: $font-swatch10-line-height;
+    letter-spacing: $font-swatch10-letter-spacing;
 
     -ms-word-break: break-word;
     word-wrap: break-word;
@@ -995,7 +1024,7 @@ blockquote {
 // 5. #Tables
 // ---------------------
 
-code, pre, th, td { color: @color__h4--text; }
+code, pre, th, td { color: $font-swatch4-color; }
 
 
 
@@ -1045,7 +1074,7 @@ code, pre, th, td { color: @color__h4--text; }
 // ------------------------------
 
 .responsivecolumns {
-    .clearfix;
+    @include clearfix;
 
     // Column
     .column {
@@ -1153,6 +1182,7 @@ code, pre, th, td { color: @color__h4--text; }
     }
 
     // columns-three-25-25-50
+
     .columns-three-25-25-50 & {
         .columns-three-left, .columns-three-middle {
             width: 22.75%;
@@ -1161,8 +1191,8 @@ code, pre, th, td { color: @color__h4--text; }
             width: 48.5%;
         }
     }
-    // columns-three-50-25-25
 
+    // columns-three-50-25-25
     .columns-three-50-25-25 & {
         .columns-three-left {
             width: 48.5%;
@@ -1171,9 +1201,8 @@ code, pre, th, td { color: @color__h4--text; }
             width: 22.75%;
         }
     }
+
     // Responsivness of layout variations
-
-
     .columns-three-50-25-25 &,
     .columns-three-25-25-50 & {
         .column {
@@ -1237,9 +1266,9 @@ code, pre, th, td { color: @color__h4--text; }
 
 // Fieldset
 fieldset {
-	margin: 0;
-	padding: 0;
-	border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 // Form Group
@@ -1250,7 +1279,7 @@ legend { display: block }
 
 // Label
 label {
-	display: block;
+  display: block;
     margin: 0 0 5px;
 }
 
@@ -1258,21 +1287,15 @@ label {
 select {
     height: 36px;
     outline: none;
-    border: 1px solid darken(@color__body--background,15%);
+    border: 1px solid darken($color-swatch1, 15%);
     border-radius: 0;
-    background-color: @color__body--background;
+    background-color: $color-swatch1;
     font-size: 12px;
     text-indent: 0;
-
-    @media @tablet {
-	font-size: 16px;
-	line-height: 1.6;
-    }
-
     &:hover, &:focus {
-        background-color: @color__body--background;
+        background-color: $color-swatch1;
         cursor: pointer;
-    }
+  }
 }
 
 
@@ -1284,29 +1307,23 @@ input[type="email"],
 input[type="password"],
 textarea,
 .input--single-line {
-	width: 100%;
-	padding: 6px 10px;
-	border: 1px solid #ddd;
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing:         border-box;
-
-	@media @tablet {
-		font-size: 16px;
-		line-height: 1.6;
-	}
-
-	&:focus {
-		border-color: #129fea;
-		box-shadow: inset 0 1px 3px #ddd;
-		outline: 0;
-	}
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+  &:focus {
+    border-color: #129fea;
+    box-shadow: inset 0 1px 3px #ddd;
+    outline: 0;
+  }
 }
 
 // Textarea
 textarea {
-	resize: vertical;
-	min-height: 100px;
+  resize: vertical;
+  min-height: 100px;
 }
 
 // Placeholder Text
@@ -1316,42 +1333,36 @@ textarea,
 textarea:focus {
 
 
-  &::-webkit-input-placeholder {
-    color: @color__p--text;
-  }
+    &::-webkit-input-placeholder {
+      color: $color-swatch5;
+    }
 
 
-  &::-moz-placeholder {
-    color: @color__p--text;
-    opacity: 1;
-  }
+    &::-moz-placeholder {
+      color: $color-swatch5;
+      opacity: 1;
+    }
 
 
-  &:-ms-input-placeholder {
-    color: @color__p--text;
-  }
+    &:-ms-input-placeholder {
+      color: $color-swatch5;
+    }
 
 
-  &::placeholder {
-    color: @color__p--text;
-  }
+    &::placeholder {
+      color: $color-swatch5;
+    }
 }
 
+// -------------------------
+// CORE: Media Queries
+// -------------------------
+
+$tablet: "only screen and (max-width: 769px)";
+$mobile: "only screen and (max-width: 480px)";
 
 // Forms: Radio and Checkbox
 // --------------------------
-
-.option-item--radio,
-.option-item--checkbox {
-    .flex-display;
-    .justify-content(flex-start);
-    .align-items(center);
-
-    margin-bottom: 8px;
-    @media @tablet {
-      margin-bottom: 10px;
-    }
-}
 
 input[type=radio],
 input[type=checkbox],
@@ -1388,13 +1399,32 @@ input[type="checkbox"] {
   list-style-type: none;
 }
 
+.option-item--radio,
+.option-item--checkbox {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    margin-bottom: 8px;
+    @media #{$tablet} {
+      margin-bottom: 10px;
+    }
+}
+
 .label--radio,
 .label--checkbox {
     margin-bottom: 0;
 }
 
-// Advanced Contact Form
-// ---------------------
+
+// Advanced contact form list
+// --------------------------
 
 .advancedcontactform ul.option-list {
     margin-left: 1px;
@@ -1403,7 +1433,7 @@ input[type="checkbox"] {
 .advancedcontactform .option-list {
   .label--radio,
   .label--checkbox {
-      color: @color__p--text;
+      color: $font-swatch5-color;
   }
 }
 
@@ -1417,7 +1447,7 @@ input[type="checkbox"] {
 // --------------------------
 
 .advancedcontactform .error {
-    border: 1px solid #f06262 !important; 
+    border: 1px solid #f06262 !important;
 }
 
 // -------------------------
@@ -1602,121 +1632,6 @@ body:after {
 }
 
 // -------------------------
-// CORE: Media Queries
-// -------------------------
-
-@tablet: ~"only screen and (max-width: 769px)";
-@mobile: ~"only screen and (max-width: 480px)";
-// -----------------------------
-// CORE: Mixns
-// -----------------------------
-
-
-// Flexbox Mixins
-// --------------
-
-// Flexbox Display
-.flex-display(@display: flex) {
-    display: ~"-webkit-box";
-    display: ~"-webkit-@{display}";
-    display: ~"-moz-@{display}";
-    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
-    display: ~"-ms-@{display}";    // IE11
-    display: @display;
-}
-
-// Flex
-.flex(@columns: initial) {
-  -webkit-flex: @columns;
-     -moz-flex: @columns;
-      -ms-flex: @columns;
-          flex: @columns;
-}
-
-// Flex Basis
-.flex-basis(@width: auto) {
-  -webkit-flex-basis: @width;
-      -ms-flex-basis: @width;
-          flex-basis: @width;
-          max-width: @width;
-}
-
-// Flex Wrap
-.flex-wrap(@wrap: wrap) {
-    -webkit-flex-wrap: @wrap;
-    -moz-flex-wrap: @wrap;
-    -ms-flex-wrap: @wrap;
-    flex-wrap: @wrap;
-}
-
-// Flex Direction
-.flex-direction(@direction: row) {
-      -webkit-box-orient: @direction;
-   -webkit-box-direction: @direction;
-  -webkit-flex-direction: @direction;
-     -moz-flex-direction: @direction;
-      -ms-flex-direction: @direction;
-          flex-direction: @direction;
-}
-
-// Flex Source Order
-.flex-order(@order: 0) {
-  -webkit-box-ordinal-group: @order;
-              -webkit-order: @order;
-                 -moz-order: @order;
-                  -ms-order: @order;
-             -ms-flex-order: @order;
-                      order: @order;
-}
-
-// Flex Grow
-.flex-grow(@grow: 0) {
-  -webkit-flex-grow: @grow;
-     -moz-flex-grow: @grow;
-      -ms-flex-grow: @grow;
-  -ms-flex-positive: @grow;
-          flex-grow: @grow;
-}
-
-// Justify Content
-.justify-content(@justify: flex-start) {
-          webkit-box-pack: @justify;
-  -webkit-justify-content: @justify;
-     -moz-justify-content: @justify;
-      -ms-justify-content: @justify;
-            -ms-flex-pack: @justify;
-          justify-content: @justify;
-}
-
-// Align Content
-.align-content(@align: stretch) {
-  -webkit-align-content: @align;
-     -moz-align-content: @align;
-      -ms-align-content: @align;
-     -ms-flex-line-pack: @align;
-          align-content: @align;
-}
-
-// Align Self
-.align-self(@align: center) {
-  -webkit-align-self: @align;
-     -moz-align-self: @align;
-      -ms-align-self: @align;
-      -ms-flex-item-align: @align;
-      -ms-flex-align: @align;
-          align-self: @align;
-}
-
-// Align Items
-.align-items(@align: stretch) {
-  -webkit-align-items: @align;
-     -moz-align-items: @align;
-      -ms-align-items: @align;
-       -ms-flex-align: @align;
-          align-items: @align;
-}
-
-// -------------------------
 // CORE: Print Styles
 // -------------------------
 
@@ -1732,7 +1647,7 @@ body:after {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 
-.print-mixin {
+@mixin print-mixin {
     * {
         box-shadow: none !important;
         text-shadow: none !important;
@@ -1788,18 +1703,22 @@ body:after {
     }
 }
 
+.print-mixin {
+    @include print-mixin;
+}
+
 @media print {
     body {
         background-color:#fff!important;
         background-image:none!important;
     }
-    .print-mixin;
+    @include print-mixin;
 }
 
 .bk-print {
-    .print-mixin;
-     background-color: #fff!important;
-     background-image: none!important;
+    @include print-mixin;
+    background-color: #fff!important;
+    background-image: none!important;
 }
 
 
@@ -1808,7 +1727,7 @@ body:after {
    Styles to deal with BaseKit related features
    ========================================================================== */
 
-.extended-print-mixin {
+@mixin extended-print-mixin {
     .widget.extendednavigation,
     .widget.socialicons,
     .bk-profile-socialicons {
@@ -1824,14 +1743,18 @@ body:after {
     }
 }
 
+.extended-print-mixin {
+    @include extended-print-mixin;
+}
+
 @media print {
-    .print-mixin;
-    .extended-print-mixin;
+    @include print-mixin;
+    @include extended-print-mixin;
 }
 
 .bk-print {
-    .print-mixin;
-    .extended-print-mixin;
+    @include print-mixin;
+    @include extended-print-mixin;
 }
 
 // -------------------------
@@ -1839,80 +1762,79 @@ body:after {
 // -------------------------
 
 .message {
-	position: relative;
-	clear: both;
-	color: @color__p--text;
-	padding-left: 1.2em;
-	@media @mobile {
-		font-size: 14px;
-	}
+  position: relative;
+  clear: both;
+  color: $font-swatch5-color;
+  padding-left: 1.2em;
+  @media #{$mobile} {
+    font-size: 14px;
+  }
 
-	&:before {
-		font-family: 'FontAwesome', sans-serif;
-		position: absolute;
-		left: 0;
-		top: 0;
-		line-height: 1.5;
-	}
-	h3, p {
-		margin: 0;
-		padding: 0;
-		line-height: 1.5;
-		color: @color__p--text;
-		font-size: 16px;
-		@media @mobile {
-			font-size: 14px;
-		}
-	}
+  &:before {
+    font-family: 'FontAwesome', sans-serif;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.5;
+  }
+  h3, p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: $font-swatch5-color;
+    font-size: 16px;
+    @media #{$mobile} {
+      font-size: 14px;
+    }
+  }
 }
 
 
 // Error
 .message--error {
-	&:before {
-		content: "\f071"; // triangle
-	}
+  &:before {
+    content: "\f071"; // triangle
+  }
 }
 
 // Warning
 .message--warning {
-	&:before {
-		content: "\f071"; // triangle
-	}
+  &:before {
+    content: "\f071"; // triangle
+  }
 }
 
 // Information
 .message--information {
-	&:before {
-		content: "\f05a"; // circled i
-	}
+  &:before {
+    content: "\f05a"; // circled i
+  }
 }
 
 // Success
 .message--success {
-	&:before {
-		content: "\f00c"; // check
-	}
+  &:before {
+    content: "\f00c"; // check
+  }
 }
 
 // Not Found
 .message--not-found {
-	&:before {
-		content: "\f002"; // magnifying glass
-	}
+  &:before {
+    content: "\f002"; // magnifying glass
+  }
 }
 
 // Empty State
 .message--empty {
-	&:before {
-		content: "\f040"; // pencil
-	}
+  &:before {
+    content: "\f040"; // pencil
+  }
 }
 
 // -------------------------
 // CORE: Cookie Warning
 // -------------------------
-
 
 .bk-cookie-container {
     background-color: rgba(0,0,0, 0.75);
@@ -1934,12 +1856,12 @@ body:after {
         color: white;
         padding: 0.5em 2em 0.5em 1em;
 
-        @media @tablet {
-            padding: 0.5em 2.5em 0.5em 1em;
+        @media #{$tablet} {
+            padding: 0.5em 5.5em 0.5em 1em;
         }
 
-        @media @mobile {
-            padding-right: 3em;
+        @media #{$mobile} {
+            padding-right: 6em;
         }
 
         a {
@@ -1952,7 +1874,7 @@ body:after {
         line-height: 23px;
     }
 
-    @media @mobile {
+    @media #{$mobile} {
         border: none;
         border-top: 1px solid #333;
         left: 0;
@@ -1970,7 +1892,7 @@ body:after {
         top: 0;
         background-color: #000;
         padding: 12px;
-        @media @tablet {
+        @media #{$tablet} {
             font-size: 18px;
             top: 0;
             padding: 22px;
@@ -2004,36 +1926,19 @@ body:after {
 
 // Widget Positioning
 .widget {
-	position: relative;
+  position: relative;
 }
 
 // Zone Widget Spacing
 .widget--zone-widget {
-    .clearfix;
-	margin: 0 0 20px;
-	clear: both;
+    @include clearfix;
+  margin: 0 0 20px;
+  clear: both;
 }
 
 // Removes margin for the spacing widget
 .widget--zone-widget[data-name="space"] {
-	margin-bottom: 0;
-}
-
-
-// Micro Clearfix
-// --------------
-
-// From CSS Wizardry' 'Inuit CSS' GitHub repository:
-// https://github.com/csswizardry/inuit.css/blob/master/generic/_clearfix.scss
-// Based on:
-// Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
-
-.clearfix {
-    &:after {
-        content:"";
-        display:table;
-        clear:both;
-    }
+  margin-bottom: 0;
 }
 
 
@@ -2046,6 +1951,7 @@ body:after {
     line-height: 0;
     font-size: 0;
 }
+
 // ---------------------
 // WIDGETS: Company Name
 // ---------------------
@@ -2063,15 +1969,15 @@ body:after {
     padding: 14px;
     text-decoration: none;
     // Font Styles
-    font-family: @font__navigation--font-family;
-    font-size: @font__navigation--font-size;
-    font-weight: @font__navigation--font-weight;
-    line-height: @font__navigation--line-height;
-    color: @color__navigation--text;
-    letter-spacing: @font__navigation--letter-spacing;
+    font-family: $font-swatch6-font-family;
+    font-size: $font-swatch6-font-size;
+    font-weight: $font-swatch6-font-weight;
+    line-height: $font-swatch6-line-height;
+    color: $font-swatch6-color;
+    letter-spacing: $font-swatch6-letter-spacing;
 
     &:hover {
-        color: @color__navigation--text--hover;
+        color: $font-swatch6-color-hover;
         cursor: pointer;
     }
 }
@@ -2083,7 +1989,7 @@ body:after {
 
 // Navigation Body
 .navigation-body {
-    .clearfix;
+    @include clearfix;
 }
 
 // Navigation List
@@ -2108,7 +2014,7 @@ body:after {
     left: 0;
     top: 100%;
     min-width: 100%;
-    background-color: @color__body--background;
+    background-color: $color-swatch1;
 
     .item-name {
         overflow: hidden;
@@ -2130,75 +2036,40 @@ body:after {
 // WIDGETS: Feature
 // ---------------------
 
-// Feature Background Image
-.feature__background-image {
-    min-height: 250px;
-}
-
 // Feature Content Wrap
 .feature__content-wrap {
-	padding: 30px;
+  padding: 30px;
 }
 
 // Feature Headline
 .feature__headline {
-	font-family: @font__feature-headline--font-family;
-	font-size: @font__feature-headline--font-size;
-	font-weight: @font__feature-headline--font-weight;
-	line-height: @font__feature-headline--line-height;
-	letter-spacing: @font__feature-headline--letter-spacing;
-    color: @color__feature-headline--text;
+  font-family: $font-swatch8-font-family;
+  font-size: $font-swatch8-font-size;
+  font-weight: $font-swatch8-font-weight;
+  line-height: $font-swatch8-line-height;
+  color: $font-swatch8-color;
+  letter-spacing: $font-swatch8-letter-spacing;
 }
 
 // Feature Strapline
 .feature__strapline {
-	font-family: @font__feature-strapline--font-family;
-	font-size: @font__feature-strapline--font-size;
-	font-weight: @font__feature-strapline--font-weight;
-	line-height: @font__feature-strapline--line-height;
-	letter-spacing: @font__feature-strapline--letter-spacing;
-    color: @color__feature-strapline--text;
+  font-family: $font-swatch9-font-family;
+  font-size: $font-swatch9-font-size;
+  font-weight: $font-swatch9-font-weight;
+  line-height: $font-swatch9-line-height;
+  color: $font-swatch9-color;
+  letter-spacing: $font-swatch9-letter-spacing;
 }
 
 // Feature Button
 .feature__button {
-	padding: 9px 12px;
+  padding: 9px 12px;
     text-decoration: none;
     &:hover {
-    	text-decoration: none;
+      text-decoration: none;
     }
 }
 
-// -------------------------
-// WIDGETS: Content
-// -------------------------
-
-
-.widget__content {
-    -ms-word-break: break-word;
-    word-wrap: break-word;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    hyphens: none;
-}
-
-.wysiwyg-font-size-xx-small { font-size: 10px; }
-
-.wysiwyg-font-size-x-small { font-size: 12px; }
-
-.wysiwyg-font-size-smaller { font-size: 14px; }
-
-.wysiwyg-font-size-small { font-size: 16px; }
-
-.wysiwyg-font-size-medium { font-size: 18px; }
-
-.wysiwyg-font-size-large { font-size: 20px; }
-
-.wysiwyg-font-size-larger { font-size: 24px; }
-
-.wysiwyg-font-size-x-large { font-size: 28px; }
-
-.wysiwyg-font-size-xx-large { font-size: 30px; }
 
 // Media: Images, Gallery, Slideshow (5-7)
 // -------------------------
@@ -2214,7 +2085,7 @@ body:after {
 
 // Element Resets
 img {
-	display: inline-block;
+  display: inline-block;
 }
 
 
@@ -2225,18 +2096,18 @@ img {
 .image-description {
     display: block;
     // Gives title and description paragraph styling
-	.paragraph;
+  @include paragraph;
 }
 
 // Image Link
 .image-link {
-	display: block;
-	font-size: 0;
-	line-height: 0;
-	&:hover {
-		// Removes underline from image link
-		text-decoration: none;
-	}
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  &:hover {
+    // Removes underline from image link
+    text-decoration: none;
+  }
 }
 
 
@@ -2244,7 +2115,7 @@ img {
 // ----------
 
 .blog-post-list__image {
-	max-height: 300px;
+  max-height: 300px;
 }
 
 
@@ -2266,7 +2137,7 @@ img {
 // Placeholder Image
 // -----------------
 .no-image {
-	background-image: url(data:image/png;base64,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);
+  background-image: url(data:image/png;base64,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);
 }
 
 
@@ -2308,7 +2179,7 @@ img {
 // --------------
 
 .gallery__figure {
-	margin: 0;
+  margin: 0;
 }
 
 .gallery-list {
@@ -2360,7 +2231,7 @@ img {
 
     // Figure
     .figure {
-        background-color: darken(@color__body--background, 5%);
+        background-color: darken($color-swatch1, 5%);
         background-position: center;
         background-repeat: no-repeat;
         min-height: 400px;
@@ -2371,7 +2242,6 @@ img {
     .image {
         display: none;
     }
-
     .caption  {
         position: absolute;
         bottom: 0;
@@ -2401,7 +2271,7 @@ img {
 
     // Pagination Selected Item
     .selected .button {
-        background-color: @color__primary;
+        background-color: $color-swatch2;
     }
 }
 
@@ -2457,9 +2327,16 @@ img {
 // 1. #Main Button
 // ---------------------
 
-// Standard
-button,
-.button {
+.widget__buttonwidget,
+.widget__clicktocall,
+.widget__dropbox,
+.widget__tweet,
+[data-name="filedownload"] {
+    font-size: $font-swatch7-font-size;
+    line-height: $font-swatch7-line-height;
+}
+
+@mixin button {
     display: inline-block;
 
     // Button Styles
@@ -2470,16 +2347,16 @@ button,
     -ms-user-select: none;
 
     // Font Styles
-    font-family: @font__button--font-family;
-    font-weight: @font__button--font-weight;
-    color: @color__button--text;
-    line-height: @font__button--line-height;
-    letter-spacing: @font__button--letter-spacing;
-    font-size: @font__button--font-size;
-    background-color: @color__button--background;
+    font-family: $font-swatch7-font-family;
+    font-weight: $font-swatch7-font-weight;
+    color: $font-swatch7-color;
+    line-height: $font-swatch7-line-height;
+    letter-spacing: $font-swatch7-letter-spacing;
+    font-size: $font-swatch7-font-size;
+    background-color: $font-swatch7-background-color;
 
     &:hover {
-        background-color: @color__button--background--hover;
+        background-color: $font-swatch7-background-color-hover;
         text-decoration: none;
     }
 
@@ -2496,16 +2373,11 @@ button,
     }
 }
 
-
-// Removes any scaling elements from pagination / ecom basket buttons
-.ecombasketsummary__quantity-minus,
-.ecombasketsummary__quantity-plus,
-.ecomproductslist__pagination-item .button,
-.responsiveslideshow__pagination-item .button {
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: 1;
+button,
+.button {
+    @include button;
 }
+
 
 
 // ---------------------
@@ -2539,14 +2411,14 @@ button,
 // 5. #Click to Call Button
 // ------------------------
 
-// .clicktocall__phone-number-link {
-//     @media @mobile, only screen and (max-width:700px) and (orientation:landscape) {
-//         // Applies button styles at mobile
-//         .button;
-//         padding: 9px 12px;
-//         text-decoration: none;
-//     }
-// }
+.clicktocall__phone-number-link {
+    @media #{$mobile}, only screen and (max-width:700px) and (orientation:landscape) {
+        // Applies button styles at mobile
+        @include button;
+        padding: 9px 12px;
+        text-decoration: none;
+    }
+}
 
 
 // Social: Social Icons, Twitter Feed (11 - 12)
@@ -2576,34 +2448,24 @@ button,
 
 // Account Name
 .account-link {
-	font-family: @font__h3--font-family;
-    font-size: @font__h3--font-size;
-    font-weight: @font__h3--font-weight;
-    color: @color__h3--text;
-    line-height: @font__h3--line-height;
-    letter-spacing: @font__h3--letter-spacing;
+  font-family: $font-swatch3-font-family;
+    font-size: $font-swatch3-font-size;
+    font-weight: $font-swatch3-font-weight;
+    color: $font-swatch3-color;
+    line-height: $font-swatch3-line-height;
+    letter-spacing: $font-swatch3-letter-spacing;
 }
 
 // Tweet List Items
 .tweet-item {
-	margin-bottom:  20px;
-	&:last-child {
-		margin-bottom: 0;
-	}
+  margin-bottom:  20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Avatar
 .avatar-link { display: block; }
-
-// Tweet Anchor Links
-.tweet-content a {
-    -ms-word-break: break-word;
-    word-wrap: break-word;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    hyphens: none;
-}
-
 
 // Other: Divider, Profile
 // ------------------------------
@@ -2611,10 +2473,10 @@ button,
 // ------------------------------
 
 hr.rule {
-	width: 100%;
-	height: 2px;
+  width: 100%;
+  height: 2px;
     border: none;
-    background-color: contrast(@color__body--background, lighten(@color__body--background,30%), darken(@color__body--background,30%));
+    background-color: $color-swatch3;
     display: inline-block;
 }
 // -------------------------
@@ -2624,10 +2486,10 @@ hr.rule {
 // Reset Profile Headline / Strapline styles
 .profile__companystrapline,
 .profile__companydescription {
-	.companystrapline__strapline,
-	.companydescription__description {
-		padding-bottom: 0;
-	}
+  .companystrapline__strapline,
+  .companydescription__description {
+    padding-bottom: 0;
+  }
 }
 
 
@@ -2637,8 +2499,8 @@ hr.rule {
 // ---------------------
 
 .yelpreview {
-	list-style: none;
-	margin: 0;
+  list-style: none;
+  margin: 0;
 }
 
 .yelpreview__review-item {
@@ -2684,7 +2546,7 @@ hr.rule {
 }
 
 
-// Partner Widgets
+
 // -------------------------
 // WIDGETS: Fonecta
 // -------------------------
@@ -2730,9 +2592,41 @@ hr.rule {
     }
 }
 
+// -------------------------
+// WIDGETS: Content
+// -------------------------
 
 
+.widget__content {
+    -ms-word-break: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+}
 
+// More/Less Button Functionality
+.content-block {
+    display: block;
+}
+
+.wysiwyg-font-size-xx-small { font-size: 10px; }
+
+.wysiwyg-font-size-x-small { font-size: 12px; }
+
+.wysiwyg-font-size-smaller { font-size: 14px; }
+
+.wysiwyg-font-size-small { font-size: 16px; }
+
+.wysiwyg-font-size-medium { font-size: 18px; }
+
+.wysiwyg-font-size-large { font-size: 20px; }
+
+.wysiwyg-font-size-larger { font-size: 24px; }
+
+.wysiwyg-font-size-x-large { font-size: 28px; }
+
+.wysiwyg-font-size-xx-large { font-size: 30px; }
 
 
 // -----------------------------
@@ -2763,8 +2657,8 @@ hr.rule {
 
 .menu-list,
 .dietary-list {
-	margin: 0;
-	list-style: none;
+  margin: 0;
+  list-style: none;
 }
 
 
@@ -2777,7 +2671,7 @@ hr.rule {
 .item-subtitle,
 .item-price,
 .item-details {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 
@@ -2789,11 +2683,11 @@ hr.rule {
 
 // Menu Section
 .menusections-list {
-	margin: 20px 0;
+  margin: 20px 0;
 }
 .menusections-item {
-	display: inline-block;
-	margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 
@@ -2805,7 +2699,7 @@ hr.rule {
 
 // Item Content
 .item-content {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 // Dietary Item
@@ -2813,7 +2707,7 @@ hr.rule {
     display: inline-block;
     margin-right: 10px;
     &:last-child {
-    	margin-right: 0;
+      margin-right: 0;
     }
 }
 
@@ -2822,23 +2716,23 @@ hr.rule {
 
 .menu-item--featured,
 .menu-section--featured {
-	padding: 20px;
-	background-color: darken(@color__body--background,5%);
+  padding: 20px;
+  background-color: darken($color-swatch1,5%);
 }
 .menu-section--featured {
-	margin-bottom: 30px;
-	padding: 30px;
-	background-color: darken(@color__body--background,5%);
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: darken($color-swatch1,5%);
 }
 
 // Featured Item Image Backgrounds
 .menu-item--featured,
 .menu-section--featured {
-	.image-link {
-		background-color: @color__body--background;
-		height: 220px;
-		line-height: 220px;
-	}
+  .image-link {
+    background-color: $color-swatch1;
+    height: 220px;
+    line-height: 220px;
+  }
 }
 
 
@@ -2851,62 +2745,63 @@ hr.rule {
 // Applied to parent list, not subsection list
 .menu-items:not(.menu-section--subsection),
 .menu-list {
-	column-count: 2;
-	column-gap: 50px;
-	-moz-column-count: 2;
-	-moz-column-gap: 50px;
-	-webkit-column-count: 2;
-	-webkit-column-gap : 50px;
-	@media @tablet {
-		column-count: 2;
-		column-gap: 60px;
-		-moz-column-count: 2;
-		-moz-column-gap: 60px;
-		-webkit-column-count: 2;
-		-webkit-column-gap : 60px;
-	}
-	@media @mobile {
-		column-count: 1;
-		-moz-column-count: 1;
-		-webkit-column-count: 1;
-	}
+  column-count: 2;
+  column-gap: 50px;
+  -moz-column-count: 2;
+  -moz-column-gap: 50px;
+  -webkit-column-count: 2;
+  -webkit-column-gap : 50px;
+  @media #{$tablet} {
+    column-count: 2;
+    column-gap: 60px;
+    -moz-column-count: 2;
+    -moz-column-gap: 60px;
+    -webkit-column-count: 2;
+    -webkit-column-gap : 60px;
+  }
+  @media #{$mobile} {
+    column-count: 1;
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+  }
 }
 
 // Applied to 'li'
 .menu-item {
-	// Forces styles below to be applied in FF
-	display: table;
-	width: 100%;
-	table-layout: fixed;
+  // Forces styles below to be applied in FF
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 
-	margin-bottom: 20px;
-	break-inside: avoid;
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	-ms-column-break-inside: avoid;
-	-o-column-break-inside: avoid;
-	page-break-inside: avoid;
-  }
-  &.odd {
-	-webkit-column-count: 3;
-	-moz-column-count: 3;
-	column-count: 3;
-	@media @tablet {
-		-webkit-column-count: 1;
-		-moz-column-count: 1;
-		column-count: 1;
-	}
-	&.bk1-columns {
-		-webkit-column-count: 1;
-		-moz-column-count: 1;
-		column-count: 1;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -ms-column-break-inside: avoid;
+  -o-column-break-inside: avoid;
+  page-break-inside: avoid;
+
+    &.odd {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+      @media #{$tablet} {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+      }
+    }
+  &.bk1-columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
         max-width: 50%;
         margin: 0 auto;
         text-align: center;
-        @media @tablet {
+        @media #{$tablet} {
             max-width: 100%;
         }
-	}
+  }
 }
 
 
@@ -2921,34 +2816,34 @@ hr.rule {
 
 .menu {
 
-	.item-image {
-		// Surrounding image div
-		.image-link {
-			width: 100%;
-		    background-color: darken(@color__body--background,5%);
-		    overflow: hidden; // Stops large images overflowing
-		    text-align: center;
+  .item-image {
+    // Surrounding image div
+    .image-link {
+        width: 100%;
+        background-color: darken($color-swatch1, 5%);
+        //overflow: hidden; // Stops large images overflowing
+        text-align: center;
 
-		    height: 240px;
-		    line-height: 240px;
+        height: 240px;
+        line-height: 240px;
 
-		    @media @tablet {
-		        height: 200px;
-		        line-height: 200px;
-		    }
-		    @media @mobile {
-		        height: 180px;
-		        line-height: 180px;
-		    }
-		}
-		// Image Element
-		.image {
-			display: inline-block;
-		    vertical-align: middle; // Vertically centers image
-		    max-width: 100%; // Allows image to fill the width or height
-		    max-height: 100%;
-		}
-	}
+        @media #{$tablet} {
+            height: 200px;
+            line-height: 200px;
+        }
+        @media #{$mobile} {
+            height: 180px;
+            line-height: 180px;
+        }
+    }
+    // Image Element
+    .image {
+      display: inline-block;
+        vertical-align: middle; // Vertically centers image
+        max-width: 100%; // Allows image to fill the width or height
+        max-height: 100%;
+    }
+  }
 
 }
  // Menu
@@ -2963,16 +2858,16 @@ hr.rule {
 .sharing-links,
 .tag-list,
 .pagination-numbers {
-	margin: 0;
-	list-style: none;
+  margin: 0;
+  list-style: none;
 }
 .menu-navigation-list {
-	margin-left: 0;
+  margin-left: 0;
 }
 // Resets Post Image Height
 .post-image {
-	font-size: 0;
-	line-height: 0;
+  font-size: 0;
+  line-height: 0;
 }
 
 
@@ -2981,22 +2876,22 @@ hr.rule {
 
 // Typography (Removes padding)
 .post-category {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 // Post Article
 .post-article {
-	margin-bottom: 30px;
-	&:last-child {
-		margin-bottom: 30px;
-	}
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 30px;
+  }
 }
 
 // Blog Featured Image
 .blogpostlist__image-link,
 .blogpost__image-link {
-	background-position: -9999px;
-	background-repeat: no-repeat;
+  background-position: -9999px;
+  background-repeat: no-repeat;
 }
 
 
@@ -3005,10 +2900,10 @@ hr.rule {
 // -----------------------------
 
 .post-image .image {
-	max-height: 350px;
-	@media @mobile {
-		max-height: 200px;
-	}
+  max-height: 350px;
+  @media #{$mobile} {
+    max-height: 200px;
+  }
 }
 
 
@@ -3016,13 +2911,13 @@ hr.rule {
 // ------------
 
 .post-content {
-	margin: 20px 0;
+  margin: 20px 0;
 }
 
 // Timestamp
 .post-footer .timestamp {
-	display: block;
-	margin: 10px 0;
+  display: block;
+  margin: 10px 0;
 }
 
 
@@ -3034,13 +2929,13 @@ hr.rule {
 
 // Post Attributes
 .post-attributes {
-	margin: 20px 0 10px;
+  margin: 20px 0 10px;
 }
 
 // Footer Sharing Links
 .blogpost-list__network-item,
 .blogpost__network-item {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 // Blog Post List Buttons,
@@ -3054,19 +2949,19 @@ hr.rule {
 .tag-list,
 .tag-item,
 .blogpost-list__pagination-item {
-	display: inline-block;
+  display: inline-block;
 }
 
 // Category Title
 .category-title {
-	display: inline-block;
-	padding: 0;
+  display: inline-block;
+  padding: 0;
 }
 
 // Network Item
 .network-item {
-	display: inline-block;
-	margin-right: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }
  // Blog
 // -----------------------------
@@ -3184,7 +3079,7 @@ button.icon--add.added {
     margin-top: 1em;
     font-size: 12px;
     line-height: 1.2;
-    color: fade(@color__p--text, 50%);
+    color: fade($font-swatch5-color, 50%);
 }
 
 
@@ -3279,7 +3174,7 @@ button.icon--add.added {
     width: 100%;
     // Table Row
     .table-row {
-        @media @mobile  {
+        @media #{$mobile}  {
             display: -webkit-box;
             display: -moz-box;
             display: -ms-flexbox;
@@ -3293,13 +3188,13 @@ button.icon--add.added {
             -ms-flex-direction: column;
             flex-direction: column;
 
-            border-bottom: 1px solid darken(@color__body--background,10%);
+            border-bottom: 1px solid darken($color-swatch1, 10%);
         }
     }
 
     // Table Row Heading
     .table-row--heading {
-        @media @mobile {
+        @media #{$mobile} {
             display: none;
         }
     }
@@ -3316,18 +3211,27 @@ button.icon--add.added {
         background-position: -1000%;
     }
 
+    // Column: Price & Total
+    .cell--price,
+    .cell--total {
+        width: 10%;
+        @media #{$mobile} {
+            border-top: 1px solid darken($color-swatch1, 10%) !important;
+        }
+    }
+
     // Table Cell: General
     .cell {
         vertical-align: middle;
         padding: 8px 12px;
         border-radius: 0;
-        @media @mobile {
+        @media #{$mobile} {
             width: 100%;
             border: 0;
             display: block;
         }
         &:not(.cell--title):before {
-            @media @mobile {
+            @media #{$mobile} {
                 content: attr(data-title);
                 display: block;
                 font-size: 12px;
@@ -3336,19 +3240,10 @@ button.icon--add.added {
         }
     }
 
-    // Column: Price & Total
-    .cell--price,
-    .cell--total {
-        width: 10%;
-        @media @mobile {
-            border-top: 1px solid darken(@color__body--background,10%);
-        }
-    }
-
     // Column: Title
     .cell--title {
         width: 50%;
-        @media @mobile {
+        @media #{$mobile} {
             width: 100%;
             padding-top: 0;
             padding-bottom: 0;
@@ -3358,12 +3253,16 @@ button.icon--add.added {
     // Column: Quantity
     .cell--quantity {
         width: 15%;
-        @media @mobile {
+        @media #{$mobile} {
             width: 100%;
             padding-bottom: 20px;
         }
     }
+}
 
+.ecombasketsummary__button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.3;
 }
 
 
@@ -3382,12 +3281,12 @@ button.icon--add.added {
     justify-content: space-between;
 
     width: 70%;
-    background-color: darken(@color__body--background,5%);
+    background-color: darken($color-swatch1, 5%);
 
-    @media @tablet {
+    @media #{$tablet} {
         width: 100%;
     }
-    @media @mobile {
+    @media #{$mobile} {
         width: initial;
         max-width: 90px;
         margin-top: 0.5em;
@@ -3428,6 +3327,7 @@ button.icon--add.added {
 .product-image .image-link,
 .basket-item-image .image-link {
     width: 100%;
+    background-color: darken($color-swatch1, 5%);
     background-repeat: no-repeat;
     background-position: -9999px;
     overflow: hidden; // Stops large images overflowing
@@ -3461,11 +3361,11 @@ button.icon--add.added {
 .product-image .image-link {
     height: 400px;
     line-height: 400px;
-    @media @tablet {
+    @media #{$tablet} {
         height: 300px;
         line-height: 300px;
     }
-    @media @mobile {
+    @media #{$mobile} {
         height: 200px;
         line-height: 200px;
     }
@@ -3488,21 +3388,9 @@ button.icon--add.added {
     height: 80px;
     line-height: 80px;
     cursor: pointer;
-    @media @mobile {
+    @media #{$mobile} {
         width: 60px;
         height: 60px;
         line-height: 60px;
     }
 }
-
-.product-gallery .image-button .image {
-    max-height: 80px;
-
-    @media @mobile {
-        max-height: 60px;
-    }
-}
-
-
- // Ecommerce
-

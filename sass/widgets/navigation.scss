@@ -1,0 +1,218 @@
+
+// -----------------------------------------
+// Snippet Template: Fullscreen Navigation
+// -----------------------------------------
+
+
+
+// ------------------------------
+// #Template Navigation
+// ------------------------------
+
+
+
+
+// So navigation aligns correctly
+.navigation-list {
+    width: 100%;
+}
+
+
+
+// Navigation List
+// ------------------------------
+
+.navigation-open {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.navigation-list {
+    margin: 0;
+
+    @media only screen and (max-width: 860px) {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include flex-display;
+        @include justify-content(center);
+        @include align-items(center);
+        text-align: center;
+    }
+
+    .navigation-open & {
+
+        @media only screen and (max-width: 860px) {
+            opacity: 1;
+            visibility: visible;
+            z-index: 3;
+        }
+    }
+}
+
+
+// Navigation Link
+// ------------------------------
+
+
+.navigation-item {
+
+
+    .item-name {
+        font-family: "Questa Sans", geneva, lucida console, sans-serif;
+        font-size: $font__navigation--font-size;
+        line-height: $font__navigation--line-height;
+        padding: 10px 0;
+
+        @media #{$mobile} {
+            padding: 6px 0;
+        }
+    }
+}
+
+
+
+
+// Dropdown Menu
+// ------------------------------
+
+
+// Dropdown Arrow
+.item-name--parent:after {
+    border: 5px solid transparent;
+    content: "";
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+
+// Dropdown Menu List
+.navigation-list--children {
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    position: relative;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    visibility: hidden;
+
+
+    // Dropdown Item Link
+    .item-name {
+        padding: 10px 15px;
+    }
+}
+
+
+// Dropdown Menu - Open
+.navigation-item.folder-open .navigation-list--children {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    opacity: 1;
+    padding: 10px 0;
+    width: auto;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    visibility: visible;
+
+    @media #{$mobile}{
+        padding: 0;
+    }
+}
+
+
+
+
+    //  Navigation Toggle Button
+    // ------------------------------
+
+
+.navigation-toggle {
+    display: none;
+    visibility: hidden;
+
+    @media only screen and (max-width: 860px) {
+        background-clip: content-box;
+        border-radius: 0;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        padding: 21px 10px 22px 5px;
+        position: absolute;
+        top: -5px;
+        right: 0;
+        height: 45px;
+        width: 45px;
+        margin-left: auto;
+        text-indent: -99999px;
+        visibility: visible;
+        z-index: 4;
+    }
+
+
+    // Top and bottom navigation item bar
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		margin-right: 0;
+		margin-left: 0;
+		position: absolute;
+		left: 5px;
+
+		height: 2px;
+		width: 30px;
+
+		@media #{$mobile} {
+			height: 2px;
+		}
+    }
+
+
+    // Top bar
+	&:before {
+		top: 13px;
+	}
+
+	// Bottom bar
+	&:after {
+		bottom: 14px;
+	}
+
+
+	// Toggle Button open state
+    // ------------------------------
+
+	.open & {
+		position: relative;
+		z-index: 100000;
+		background-color: transparent;
+
+		&:before {
+			top: 23px;
+			background: red;
+			-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);
+			-o-transform: rotate(45deg); -ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+			@media #{$mobile} {
+				top: 21px;
+			}
+		}
+
+		&:after {
+			bottom: 21px;
+			background: red;
+			-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg); -ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+	}
+}

@@ -1,0 +1,445 @@
+
+// -------------------------------------
+// Row Structure: Layout
+// -------------------------------------
+
+
+
+
+//  Row Variables
+// -----------------------------
+
+
+// Width
+$width__contained: 960px;
+$width__wide: 1200px;
+$width__full: 100%;
+$width__contained--padding: 30px;
+$width__wide--padding: 30px;
+$width__full--padding: 60px;
+
+
+// Height
+$height__thin: auto;
+$height__default: auto;
+$height__full: 100vh;
+$height__no--padding: 0;
+$height__thin--padding: 15px;
+$height__default--padding: 65px;
+$height__full--padding: 85px;
+
+
+
+
+//  Widget Zone Reset
+// -----------------------------
+
+
+.widget--zone-widget {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+//  Row Flex
+// -----------------------------
+
+
+// Sets container flex
+.row__container,
+.row__container .responsivecolumns {
+    box-sizing: border-box;
+    @include flex(0 1 auto);
+    @include flex-display;
+    @include flex-wrap(nowrap);
+    margin: 0 auto;
+    width: 100%;
+
+    @media only screen and (max-width: 925px) {
+        @include flex-wrap(nowrap);
+    }
+}
+
+
+
+.row__container {
+    @include flex-direction(column);
+}
+
+
+
+.row__container .responsivecolumns {
+    @include flex-direction(row);
+
+    @media #{$tablet} {
+        display: block;
+    }
+}
+
+
+
+
+//  Row Height
+// -----------------------------
+
+
+.row {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    &--thin-height .row__container {
+        padding-top: $height__thin--padding;
+        padding-bottom: $height__thin--padding;
+    }
+
+
+    &--default-height .row__container {
+        padding-top: $height__default--padding;
+        padding-bottom: $height__default--padding;
+
+        @media only screen and (min-width: 1920px) {
+            padding-top: ( $height__default--padding * 2 );
+            padding-bottom: ( $height__default--padding * 2 );
+        }
+
+        @media only screen and (max-width: 860px) {
+            padding-top: ( $height__default--padding / 2 );
+            padding-bottom: ( $height__default--padding / 2 );
+        }
+
+        @media only screen and (max-width: 700px) {
+            padding-top: ( $height__default--padding / 3 );
+            padding-bottom: ( $height__default--padding / 3 );
+        }
+    }
+
+
+    &--full-height,
+    &--full-height .row__container {
+        min-height: $height__full;
+    }
+
+
+    &--full-height .row__container {
+        padding-top: $height__full--padding;
+        padding-bottom: $height__full--padding;
+
+        @media only screen and (max-width: 860px) {
+            padding-top: ( $height__full--padding / 2 );
+            padding-bottom: ( $height__full--padding / 2 );
+        }
+
+        @media only screen and (max-width: 700px) {
+            padding-top: ( $height__full--padding / 3 );
+            padding-bottom: ( $height__full--padding / 3 );
+        }
+    }
+}
+
+
+
+.row--layout-full {
+
+
+    // Remove padding for full width row layout option
+    &.row--thin-height,
+    &.row--default-height,
+    &.row--full-height {
+
+
+        .row__container {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+
+        // Allow these widgets to go full height
+        .column .widget {
+            &[data-name="image"],
+            &[data-name="slideshow"],
+            &[data-name="youtube"],
+            &[data-name="map"],
+            &[data-name="gallery"] {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+            }
+        }
+    }
+
+
+    &.row--thin-height .column .widget {
+
+
+        &:first-child {
+            margin-top: $height__thin--padding;
+        }
+
+        &:last-child {
+            margin-bottom: $height__thin--padding;
+        }
+    }
+
+
+    &.row--default-height .column .widget {
+
+
+        &:first-child {
+            margin-top: $height__default--padding;
+        }
+
+        &:last-child {
+            margin-bottom: $height__default--padding;
+        }
+    }
+
+
+    // Widgets to to exclude from padding
+    &.row--full-height .column .widget {
+
+
+        &:first-child {
+            margin-top: $height__full--padding;
+        }
+
+
+        &:last-child {
+            margin-bottom: $height__full--padding;
+        }
+    }
+}
+
+
+
+
+//  Row Width
+// -----------------------------
+
+
+.row--layout {
+
+
+    // Contained
+    &-contained .row__container {
+        max-width: $width__contained;
+
+        @media only screen and (max-width: 960px) {
+            padding-left: $width__wide--padding;
+            padding-right: $width__wide--padding;
+        }
+    }
+
+
+    // Wide
+    &-wide .row__container {
+        max-width: $width__wide;
+
+        @media only screen and (max-width: 1200px) {
+            padding-left: $width__wide--padding;
+            padding-right: $width__wide--padding;
+        }
+    }
+
+
+    // Full
+    &-full {
+
+
+        .column:first-child .widget,
+        :not(.column) .widget {
+            padding-left: $width__full--padding;
+
+            @media only screen and (max-width: 860px) {
+                padding-right: ( $width__full--padding / 1.5 );
+            }
+
+            @media only screen and (max-width: 700px) {
+                padding-left: ( $width__full--padding / 2 );
+            }
+
+
+            // Allow these widgets to go full width
+            &[data-name="image"],
+            &[data-name="slideshow"],
+            &[data-name="youtube"],
+            &[data-name="map"],
+            &[data-name="gallery"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+
+        .column:last-child .widget,
+        :not(.column) .widget {
+            padding-right: $width__full--padding;
+
+            @media only screen and (max-width: 860px) {
+                padding-right: ( $width__full--padding / 1.5 );
+            }
+
+            @media only screen and (max-width: 700px) {
+                padding-right: ( $width__full--padding / 2 );
+            }
+
+
+            // Allow these widgets to go full width
+            &[data-name="image"],
+            &[data-name="slideshow"],
+            &[data-name="youtube"],
+            &[data-name="map"],
+            &[data-name="gallery"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+
+
+
+//  Row Alignment
+// -----------------------------
+
+
+.row--vertical-align {
+
+
+    // Align Top
+    &-top .row__container {
+        @include justify-content(flex-start);
+    }
+
+    &-top .responsivecolumns {
+        @include align-items(flex-start);
+    }
+
+
+    // Align center
+    &-center .row__container {
+        @include justify-content(center);
+    }
+
+    &-center .responsivecolumns {
+        @include align-items(center);
+    }
+
+
+    // Align Bottom
+    &-bottom .row__container {
+        @include justify-content(flex-end);
+    }
+
+    &-bottom .responsivecolumns {
+        @include justify-content(flex-end);
+    }
+}
+
+
+#page-zones__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10003;
+
+
+    + #page-zones__main > [data-name="row"]:first-child .row--full-height + .widget-overlay {
+        height: calc(100vh - 78px);
+        top: 78px;
+    }
+}
+
+
+#page-zones__header,
+#page-zones__footer {
+
+    // Columns Breakpoints
+    .columns-two-left,
+    .columns-two-right,
+    .columns-three-left,
+    .columns-three-middle,
+    .columns-three-right,
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
+        @media only screen and (max-width: 860px) {
+            @include flex-basis(50%);
+            margin-bottom: 0;
+            width: 50%;
+
+            // Removes right sided margin
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+#page-zones__footer {
+
+    // Columns Breakpoints
+    .columns-two-left,
+    .columns-two-right,
+    .columns-three-left,
+    .columns-three-middle,
+    .columns-three-right,
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
+        @media only screen and (max-width: 700px) {
+            @include flex-basis(100%);
+            margin-bottom: 0;
+            width: 100%;
+
+            // Removes right sided margin
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+#page-zones__header {
+    .row__container .responsivecolumns {
+
+        @media only screen and (max-width: 700px) {
+            @include flex-display;
+        }
+    }
+
+    .columns-two-left {
+        @media only screen and (max-width: 700px) {
+            @include flex(1 1 auto);
+            margin-bottom: 0;
+            margin-right: 60px;
+            width: auto;
+
+            // Removes right sided margin
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .columns-two-right {
+        @media only screen and (max-width: 700px) {
+            @include flex(0 1 auto);
+            margin-bottom: 0;
+            width: auto;
+
+            // Removes right sided margin
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+}
