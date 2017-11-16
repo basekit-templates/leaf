@@ -82,7 +82,7 @@
     .button {
         background-color: $row-color-light;
         box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
-        color: #998d5e;
+        color: $row-color-accent;
 
         &:before {
             background-color: darken($row-color-light, 2%);

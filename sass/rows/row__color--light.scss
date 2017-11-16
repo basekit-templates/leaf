@@ -42,7 +42,9 @@
 
 
     .button {
+        background-color: $row-color-accent;
         box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
+        color: $row-color-light;
     }
 
 
