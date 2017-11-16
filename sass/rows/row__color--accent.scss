@@ -89,6 +89,16 @@
             box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
         }
     }
+
+
+    .phone-number-link {
+        color: transparentize($row-color-light, 0.2);
+
+        @media #{$mobile} {
+            background-color: $row-color-light;
+            color: $row-color-accent;
+        }
+    }
 }
 
 .row--background-type-image.row--accent {
@@ -118,5 +128,3 @@
         z-index: 1;
     }
 }
-
-

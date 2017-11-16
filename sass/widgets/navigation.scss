@@ -43,13 +43,17 @@
         @include flex-display;
         @include justify-content(center);
         @include align-items(center);
+        @include flex-wrap(wrap);
         text-align: center;
     }
 
     .navigation-open & {
 
         @media only screen and (max-width: 860px) {
+            margin-top: 65px;
+            padding-bottom: 15px;
             opacity: 1;
+            overflow-y: scroll;
             visibility: visible;
             z-index: 3;
         }
@@ -62,6 +66,14 @@
 
 
 .navigation-item {
+
+    .navigation-open & {
+
+        @media #{$tablet} {
+            display: block;
+            width: 80%;
+        }
+    }
 
 
     .item-name {
@@ -147,7 +159,7 @@
         padding: 21px 10px 22px 5px;
         position: absolute;
         top: -5px;
-        right: 0;
+        right: -10px;
         height: 45px;
         width: 45px;
         margin-left: auto;

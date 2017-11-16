@@ -91,9 +91,18 @@
     }
 
 
-    .phone-number-link,
     .social-link {
         color: $row-color-dark;
+    }
+
+
+    .phone-number-link {
+        color: transparentize($row-color-dark, 0.4);
+
+        @media #{$mobile} {
+            background-color: $row-color-accent;
+            color: $row-color-light;
+        }
     }
 
 

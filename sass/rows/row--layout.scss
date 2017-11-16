@@ -397,7 +397,7 @@ $height__full--padding: 85px;
     .columns-four-fourth {
         @media only screen and (max-width: 700px) {
             @include flex-basis(100%);
-            margin-bottom: 0;
+            margin-bottom: 20px;
             width: 100%;
 
             // Removes right sided margin
@@ -405,6 +405,10 @@ $height__full--padding: 85px;
                 margin-right: 0;
             }
         }
+    }
+
+    .responsivecolumns .column:last-child {
+        margin-bottom: 0;
     }
 }
 
