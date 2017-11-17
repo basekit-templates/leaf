@@ -223,3 +223,13 @@
 		}
 	}
 }
+
+
+// Temporary edit mode toggle fix
+.active-row .navigation-toggle {
+    top: -20px;
+
+    .navigation-open & {
+        top: 6px;
+    }
+}

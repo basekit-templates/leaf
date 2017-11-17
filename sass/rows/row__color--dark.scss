@@ -118,6 +118,30 @@
 }
 
 
+.row--background-type-image {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    label {
+        color: $row-color-dark;
+    }
+
+
+    p, ul, li, ol, .p-font {
+        color: transparentize($row-color-light, 0.2);
+    }
+
+
+    .button,
+    button {
+        backgorund-color: $row-color-accent;
+        color: $row-color-light;
+    }
+}
+
+
 .row--dark.row--background-type-image {
 
 

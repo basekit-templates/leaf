@@ -398,6 +398,7 @@ $height__full--padding: 85px;
         @media only screen and (max-width: 700px) {
             @include flex-basis(100%);
             margin-bottom: 20px;
+            padding-top: 15px;
             width: 100%;
 
             // Removes right sided margin
