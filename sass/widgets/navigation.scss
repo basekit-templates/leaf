@@ -204,13 +204,12 @@
 
 	.navigation-open & {
 		position: relative;
-        top: -3px;
+        top: 0;
 		z-index: 100000;
 		background-color: transparent;
 
 		&:before {
 			top: 20px;
-			background: red;
 			-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);
 			-o-transform: rotate(45deg); -ms-transform: rotate(45deg);
 			transform: rotate(45deg);
@@ -218,7 +217,6 @@
 
 		&:after {
 			bottom: 23px;
-			background: red;
 			-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);
 			-o-transform: rotate(-45deg); -ms-transform: rotate(-45deg);
 			transform: rotate(-45deg);

@@ -56,7 +56,7 @@
     .form-group {
 
         &:after {
-            background: transparentize($row-color-dark, 0.6);
+            background: transparentize($row-color-light, 0.7);
             transition: background 0.35s ease;
         }
 
@@ -64,7 +64,7 @@
         &:focus,
         &:active {
             &:after {
-                background: transparentize($row-color-dark, 0.4);
+                background: transparentize($row-color-light, 0.5);
             }
         }
     }
