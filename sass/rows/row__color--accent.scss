@@ -1,6 +1,6 @@
 
 // Accent Colours
-.row--accent {
+.row--style-accent {
     background-color: $row-color-accent;
 
     .navigation-list {
@@ -101,7 +101,7 @@
     }
 }
 
-.row--background-type-image.row--accent {
+.row--style-background-type-image.row--style-accent {
     &:after {
         content: "";
         position: absolute;

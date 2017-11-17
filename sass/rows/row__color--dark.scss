@@ -1,6 +1,6 @@
 
 
-.row--dark {
+.row--style-dark {
     background-color: $row-color-dark;
 
 
@@ -92,7 +92,7 @@
     }
 
 
-    .row--background-type-image {
+    .row--style-background-type-image {
 
         &:after {
             content: "";
@@ -118,7 +118,7 @@
 }
 
 
-.row--background-type-image {
+.row--style-background-type-image {
 
     h1,
     h2,
@@ -142,7 +142,7 @@
 }
 
 
-.row--dark.row--background-type-image {
+.row--style-dark.row--style-background-type-image {
 
 
     &:after {

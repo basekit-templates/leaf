@@ -1,6 +1,6 @@
 
 
-.row--light {
+.row--style-light {
     background-color: $row-color-light;
 
 
@@ -106,7 +106,7 @@
     }
 
 
-    .row--background-type-image {
+    .row--style-background-type-image {
 
         &:after {
             content: "";
@@ -132,7 +132,7 @@
 }
 
 
-.row--light.row--background-type-image {
+.row--style-light.row--style-background-type-image {
 
 
     &:after {
