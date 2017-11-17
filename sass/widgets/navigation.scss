@@ -202,25 +202,22 @@
 	// Toggle Button open state
     // ------------------------------
 
-	.open & {
+	.navigation-open & {
 		position: relative;
+        top: -3px;
 		z-index: 100000;
 		background-color: transparent;
 
 		&:before {
-			top: 23px;
+			top: 20px;
 			background: red;
 			-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg);
 			-o-transform: rotate(45deg); -ms-transform: rotate(45deg);
 			transform: rotate(45deg);
-
-			@media #{$mobile} {
-				top: 21px;
-			}
 		}
 
 		&:after {
-			bottom: 21px;
+			bottom: 23px;
 			background: red;
 			-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);
 			-o-transform: rotate(-45deg); -ms-transform: rotate(-45deg);
