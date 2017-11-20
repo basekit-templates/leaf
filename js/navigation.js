@@ -1,5 +1,5 @@
 
 // Custom Toggle
 $(document).on("click", ".navigation-toggle", function() {
-    $( "body" ).toggleClass( "navigation-open" );
+    $( "body, #page-zones__header" ).toggleClass( "navigation-open" );
 });
