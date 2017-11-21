@@ -120,12 +120,28 @@
 
 .row--background-type-image {
 
+    &:after {
+        background: radial-gradient(ellipse at center, transparentize($row-color-dark, 0.9) 0%, transparentize($row-color-dark, 0.7) 70%, transparentize($row-color-dark, 0.4) 100%);
+        content: "";
+        position: absoloute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+
+    .row__container {
+        position: relative;
+        z-index: 1;
+    }
+
     h1,
     h2,
     h3,
     h4,
     label {
-        color: $row-color-dark;
+        color: $row-color-light;
     }
 
 
@@ -136,38 +152,7 @@
 
     .button,
     button {
-        backgorund-color: $row-color-accent;
-        color: $row-color-light;
-    }
-}
-
-
-.row--dark.row--background-type-image {
-
-
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(ellipse at center, rgba(43, 43, 60, 0.1) 0%,rgba(43, 43, 60, 0.35) 70%,rgba(43, 43, 60, 0.635) 100%);
-    }
-
-
-    p, ul, li, ol, .p-font {
-        color: lighten($row-color-light, 65%);
-    }
-
-    .button {
         background-color: $row-color-accent;
         color: $row-color-light;
-    }
-
-
-    .row__container {
-        position: relative;
-        z-index: 1;
     }
 }
