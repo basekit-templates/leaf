@@ -17,7 +17,7 @@
     .form-group {
 
         &:after {
-            background: transparentize($row-color-dark, 0.6);
+            background: transparentize($row-color-dark, 0.7);
             transition: background 0.35s ease;
         }
 
@@ -25,7 +25,7 @@
         &:focus,
         &:active {
             &:after {
-                background: transparentize($row-color-dark, 0.4);
+                background: transparentize($row-color-dark, 0.5);
             }
         }
     }
@@ -129,6 +129,11 @@
             z-index: 1;
         }
     }
+}
+
+
+.navigation-open .navigation-toggle {
+    background-color: transparent;
 }
 
 
