@@ -1,6 +1,6 @@
 
 
-.row--light {
+.row--style-light {
     background-color: $row-color-light;
 
 
@@ -17,7 +17,7 @@
     .form-group {
 
         &:after {
-            background: transparentize($row-color-dark, 0.6);
+            background: transparentize($row-color-dark, 0.7);
             transition: background 0.35s ease;
         }
 
@@ -25,7 +25,7 @@
         &:focus,
         &:active {
             &:after {
-                background: transparentize($row-color-dark, 0.4);
+                background: transparentize($row-color-dark, 0.5);
             }
         }
     }
@@ -106,7 +106,7 @@
     }
 
 
-    .row--background-type-image {
+    .row--style-background-type-image {
 
         &:after {
             content: "";
@@ -128,5 +128,41 @@
             position: relative;
             z-index: 1;
         }
+    }
+}
+
+
+.navigation-open .navigation-toggle {
+    background-color: transparent;
+}
+
+
+.row--style-light.row--style-background-type-image {
+
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(ellipse at center, rgba(43, 43, 60, 0.1) 0%,rgba(43, 43, 60, 0.35) 70%,rgba(43, 43, 60, 0.635) 100%);
+    }
+
+
+    p, ul, li, ol, .p-font {
+        color: lighten($row-color-dark, 65%);
+    }
+
+    .button {
+        background-color: $row-color-accent;
+        color: $row-color-light;
+    }
+
+
+    .row__container {
+        position: relative;
+        z-index: 1;
     }
 }

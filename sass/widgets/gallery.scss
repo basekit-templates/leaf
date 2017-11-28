@@ -10,7 +10,18 @@
     @include justify-content(space-between);
 
     @media #{$tablet} {
-        padding: 15px 15px;
+        padding: 0;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .gallery-item:first-child {
+            margin-top: 0;
+        }
+
+
+        .gallery-item:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -24,11 +35,14 @@
 
     @media #{$tablet} {
         @include flex-basis(47.5%);
-        margin: 20px 15px;
+        max-width: 47.5%;
+        margin: 20px 0;
     }
 
     @media only screen and (max-width: 700px) {
         @include flex-basis(100%);
+        max-width: 100%;
+        margin: 20px 0;
     }
 
 
