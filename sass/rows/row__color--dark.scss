@@ -142,7 +142,7 @@
 }
 
 
-.row--style-dark.row--style-background-type-image {
+.row--style-dark.row--background-type-image {
 
 
     &:after {
@@ -157,7 +157,7 @@
 
 
     p, ul, li, ol, .p-font {
-        color: lighten($row-color-light, 65%);
+        color: $row-color-light;
     }
 
     .button {
