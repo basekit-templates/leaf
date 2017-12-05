@@ -11,17 +11,17 @@
 
 
 .responsivecolumns {
-    .box-sizing(border-box);
-    .flex-display;
-    .flex-direction(row);
-    .flex(0 1 auto);
-    .flex-wrap(nowrap);
+    box-sizing: border-box;
+    @include flex-display;
+    @include flex-direction(row);
+    @include flex(0 1 auto);
+    @include flex-wrap(nowrap);
     margin: 0 auto;
     position: relative;
     width: 100%;
 
     @media only screen and (max-width: 925px) {
-        .flex-wrap(wrap);
+        @include flex-wrap(wrap);
     }
 }
 
@@ -44,7 +44,7 @@
     // Column margin and dropzone min height
     .column {
         margin-right: 5%;
-        min-height: 40px;
+        min-height: 35px;
         position: relative;
 
         @media only screen and (max-width: 700px) {
@@ -67,7 +67,7 @@
 // Two Columns
 .columns-two-left,
 .columns-two-right {
-    .flex-basis(47.5%);
+    @include flex-basis(47.5%);
 }
 
 
@@ -75,7 +75,7 @@
 .columns-three-left,
 .columns-three-middle,
 .columns-three-right {
-    .flex-basis(30%);
+    @include flex-basis(30%);
 }
 
 
@@ -84,37 +84,51 @@
 .columns-four-second,
 .columns-four-third,
 .columns-four-fourth {
-    .flex-basis(20%);
+    @include flex-basis(20%);
 }
 
 
 // Columns Breakpoints
-.columns-two-left,
-.columns-two-right,
-.columns-three-left,
-.columns-three-middle,
-.columns-three-right,
-.columns-four-first,
-.columns-four-second,
-.columns-four-third,
-.columns-four-fourth {
+.responsivecolumns {
+    .columns-two-left,
+    .columns-two-right,
+    .columns-three-left,
+    .columns-three-middle,
+    .columns-three-right,
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
 
 
-    // Makes all columns two up on smaller screens
-    @media only screen and (max-width: 925px) {
-        .flex-basis(47.5%);
+        // Makes all columns two up on smaller screens
+        @media only screen and (max-width: 925px) {
+            @include flex-basis(47.5%);
 
 
-        // Removes right sided margin
-        &:nth-child(even) {
+            // Removes right sided margin
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+
+
+        @media only screen and (max-width: 860px) {
+            @include flex-basis(100%);
+            margin-bottom: 40px;
+            margin-right: 0;
+            width: 100%;
+        }
+
+
+        // Makes all columns full width at small screens
+        @media only screen and (max-width: 700px) {
+            @include flex-basis(100%);
+            margin-bottom: 25px;
+            width: 100%;
             margin-right: 0;
         }
     }
-
-
-    // Makes all columns full width at small screens
-    @media only screen and (max-width: 700px) {
-        .flex-basis(100%);
-        margin-right: 0!important;
-    }
 }
+
+

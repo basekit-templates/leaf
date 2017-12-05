@@ -12,8 +12,8 @@
 
     // Row container
     .row__container {
-        .align-items(flex-start);
-        .justify-content(center);
+        @include align-items(flex-start);
+        @include justify-content(center);
         max-width: 100%;
         padding-top: 70px;
         position: relative;
@@ -23,7 +23,7 @@
 
     // Background image
     .row {
-        background-image: url("http://55b558c7-resources.feature-rows-v1.cluster.basekit-ci.co.uk/2a70816/templates/032c5a0e0a02dec4c5d3dc2948c45ecc/images/feature.jpg") !important;
+        // background-image: url("http://55b558c7-resources.feature-rows-v1.cluster.basekit-ci.co.uk/2a70816/templates/032c5a0e0a02dec4c5d3dc2948c45ecc/images/feature.jpg") !important;
         background-size: cover;
         background-position: center;
 
@@ -31,13 +31,11 @@
             background-position: 75%;
         }
 
-
         @media only screen and (max-width: 700px) {
             background-blend-mode: lighten;
 
 
             &:after {
-                background-color: fade(@color__navigation--background, .55);
                 content: "";
                 position: absolute;
                 top: 0;
@@ -67,19 +65,19 @@
     h1,
     h2,
     h3 {
-        color: @color__primary;
+        // color: $color__primary;
     }
 
 
     // Paragraph color
     p {
-        color: @color__p--text;
-        font-size: bkscale(@font__p--font-size, 1.1);
-        line-height bkscale(@font__p--line-height, 1.1);
+        // color: $color__p--text;
+        font-size: bkscale($font__p--font-size, 1.1);
+        line-height bkscale($font__p--line-height, 1.1);
 
         @media only screen and (max-width: 700px) {
-            font-size: bkscale(@font__p--font-size, 1);
-            line-height bkscale(@font__p--line-height, 1);
+            font-size: bkscale($font__p--font-size, 1);
+            line-height bkscale($font__p--line-height, 1);
         }
     }
 }

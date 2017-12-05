@@ -1,0 +1,130 @@
+
+// Accent Colours
+.row--style-accent {
+    background-color: $row-color-accent;
+
+    .navigation-list {
+        background-color: $row-color-accent;
+    }
+
+    .navigation-item .item-name,
+    .navigation-list--children  {
+        color: lighten($row-color-light, 65%);
+
+        &.selected .item-name,
+        &:hover .item-name,
+        &:focus .item-name {
+            color: $row-color-light;
+        }
+    }
+
+
+    .navigation-list--children {
+        background-color: $row-color-accent;
+    }
+
+
+   .item-name--parent:after {
+        border-top-color: darken($row-color-light, 35%);
+    }
+
+    .navigation-toggle,
+    .navigation-toggle:before,
+    .navigation-toggle:after {
+        background-color: transparentize($row-color-light, 0.3);
+    }
+
+
+    h1,
+    h2,
+    h3,
+    label {
+        color: $row-color-light;
+    }
+
+
+    p {
+        color: #ecebe6;
+    }
+
+
+    a {
+        color: #fff;
+    }
+
+
+    .form-group {
+
+        &:after {
+            background: transparentize($row-color-light, 0.7);
+            transition: background 0.35s ease;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:after {
+                background: transparentize($row-color-light, 0.5);
+            }
+        }
+    }
+
+
+    input, input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    .input--single-line {
+        color: fade-in($row-color-light, 0.85);
+    }
+
+
+    .button {
+        background-color: $row-color-light;
+        box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+        color: $row-color-accent;
+
+        &:before {
+            background-color: darken($row-color-light, 2%);
+            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+
+    .phone-number-link {
+        color: transparentize($row-color-light, 0.2);
+
+        @media #{$mobile} {
+            background-color: $row-color-light;
+            color: $row-color-accent;
+        }
+    }
+}
+
+.row--style-background-type-image.row--style-accent {
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(ellipse at center, rgba(43, 43, 60, 0.25) 0%,rgba(43, 43, 60, 0.5) 70%,rgba(43, 43, 60, 0.65) 100%);
+    }
+
+
+    p, ul, li, ol, .p-font {
+        color: lighten($row-color-light, 65%);
+    }
+
+    .button {
+        background-color: $row-color-accent;
+        color: $row-color-light;
+    }
+
+
+    .row__container {
+        position: relative;
+        z-index: 1;
+    }
+}

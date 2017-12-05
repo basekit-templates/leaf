@@ -5,7 +5,6 @@
 
 
 label {
-	color: @color__h2--text;
 	font-family: "acta-bold", playfair display, georgia, serif;
 	font-size: 20px;
 	line-height: 26px;
@@ -20,8 +19,7 @@ label {
     position: relative;
 
 
-     &:after {
-        background: fade(@color__primary, 17.5%);
+    &:after {
 		content: '';
 		position: absolute;
 		left: 0;
@@ -29,15 +27,6 @@ label {
 		bottom: 1px;
 		height: 2px;
 		transition: all 0.25s ease;
-    }
-
-
-    &:hover,
-    &:focus,
-    &:active {
-        &:after {
-            background: @color__primary;
-        }
     }
 
 
@@ -56,11 +45,10 @@ input[type="password"],
 textarea,
 .input--single-line {
 	background-color: transparent;
-    color: @color__p--text;
     border: 0;
     font-family: "questa-sans", helvetica neue, sans-serif;
     font-size: 18px;
-    font-weight: @font__p--font-weight;
+    font-weight: $font__p--font-weight;
     line-height: 28px;
     outline: none;
     padding: 10px 12px 18px 0;
@@ -76,17 +64,17 @@ textarea,
     }
 
     &::-webkit-input-placeholder {
-        color: @color__body--background;
+        color: $color__body--background;
     }
 
 
     &::-moz-placeholder {
-        color: @color__body--background;
+        color: $color__body--background;
     }
 
 
     &:-ms-input-placeholder {
-        color: @color__body--background;
+        color: $color__body--background;
     }
 
 

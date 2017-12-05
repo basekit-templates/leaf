@@ -1,0 +1,173 @@
+
+
+.row--style-dark {
+    background-color: $row-color-dark;
+
+
+    h1,h2,h3,h4,label {
+        color: $row-color-light;
+    }
+
+
+    p, ul, li, ol, .p-font {
+        color: transparentize($row-color-light, 0.2);
+    }
+
+
+    .form-group {
+
+        &:after {
+            background: transparentize($row-color-light, 0.5);
+            transition: background 0.35s ease;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:after {
+                background: transparentize($row-color-light, 0.3);
+            }
+        }
+    }
+
+
+    input, input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    .input--single-line {
+        color: transparentize($row-color-light, 0.2);
+    }
+
+
+    .button {
+        background-color: $row-color-accent;
+        box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
+        color: $row-color-light;
+    }
+
+
+    .navigation-list {
+        background-color: $row-color-dark;
+    }
+
+
+    .navigation-item .item-name,
+    .navigation-list--children {
+        color: transparentize($row-color-light, 0.2);
+
+        &.selected,
+        &:hover,
+        &:focus {
+            color: $row-color-light;
+        }
+    }
+
+    .navigation-list--children {
+        color: transparentize($row-color-light, 0.2);
+    }
+
+    .item-name--parent:after {
+        color: transparentize($row-color-light, 0.35);
+    }
+
+    .navigation-toggle,
+    .navigation-toggle:before,
+    .navigation-toggle:after {
+        background-color: transparentize($row-color-light, 0.3);
+    }
+
+
+    .phone-number-link {
+        color: transparentize($row-color-light, 0.2);
+
+        @media #{$mobile} {
+            background-color: $row-color-accent;
+            color: $row-color-light;
+        }
+    }
+
+    .social-link {
+        color: $row-color-light;
+    }
+
+
+    .row--style-background-type-image {
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(43, 43, 60, 0.1) 0%,rgba(43, 43, 60, 0.35) 70%,rgba(43, 43, 60, 0.635) 100%);
+        }
+
+
+        p, ul, li, ol, .p-font {
+            color: lighten($row-color-light, 65%);
+        }
+
+
+        .row__container {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+
+.row--style-background-type-image {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    label {
+        color: $row-color-dark;
+    }
+
+
+    p, ul, li, ol, .p-font {
+        color: transparentize($row-color-light, 0.2);
+    }
+
+
+    .button,
+    button {
+        backgorund-color: $row-color-accent;
+        color: $row-color-light;
+    }
+}
+
+
+.row--style-dark.row--style-background-type-image {
+
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(ellipse at center, rgba(43, 43, 60, 0.1) 0%,rgba(43, 43, 60, 0.35) 70%,rgba(43, 43, 60, 0.635) 100%);
+    }
+
+
+    p, ul, li, ol, .p-font {
+        color: lighten($row-color-light, 65%);
+    }
+
+    .button {
+        background-color: $row-color-accent;
+        color: $row-color-light;
+    }
+
+
+    .row__container {
+        position: relative;
+        z-index: 1;
+    }
+}
