@@ -5,7 +5,7 @@
 
 
 label {
-	font-family: $font__heading--font-family;
+	font-family: $row-font-primary;
 	font-size: 20px;
 	line-height: 26px;
 	margin-bottom: 0;
@@ -47,7 +47,7 @@ textarea,
 .input--single-line {
 	background-color: transparent;
     border: 0;
-    font-family: $font__body--font-family;
+    font-family: $row-font-secondary;
     font-size: $font__body--font-size;
     font-weight: $font__body--font-weight;
     line-height: $font__body--line-height;

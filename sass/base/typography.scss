@@ -24,7 +24,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: $font__heading--font-family;
+    font-family: $row-font-primary;
     font-weight: $font__heading--font-weight;
     letter-spacing: $font__heading--letter-spacing;
     padding-bottom: 3px;
@@ -43,6 +43,11 @@ h1 {
         line-height: bkscale($font__h1--line-height, 0.85);
     }
 
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__h1--font-size, 0.75);
+        line-height: bkscale($font__h1--line-height, 0.75);
+    }
+
     @media only screen and (max-width: 700px) {
         font-size: bkscale($font__h1--font-size, 0.58);
         line-height: bkscale($font__h1--line-height, 0.58);
@@ -54,14 +59,19 @@ h1 {
         line-height: $font__h2--line-height;
 
         @media only screen and (max-width: 1024px) {
-            font-size: bkscale($font__h1--font-size, 0.85);
-            line-height: bkscale($font__h1--line-height, 0.85);
+            font-size: bkscale($font__h2--font-size, 0.9);
+            line-height: bkscale($font__h2--line-height, 0.9);
+        }
+
+        @media only screen and (max-width: 860px) {
+            font-size: bkscale($font__h2--font-size, 0.75);
+            line-height: bkscale($font__h2--line-height, 0.75);
         }
 
         @media only screen and (max-width: 700px) {
-            font-size: bkscale($font__h1--font-size, 0.58);
-            line-height: bkscale($font__h1--line-height, 0.58);
-        }
+        font-size: bkscale($font__h2--font-size, 0.78);
+        line-height: bkscale($font__h2--line-height, 0.78);
+    }
     }
 }
 
@@ -75,6 +85,11 @@ h2 {
         line-height: bkscale($font__h2--font-size, 0.9);
     }
 
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__h2--font-size, 0.75);
+        line-height: bkscale($font__h2--line-height, 0.75);
+    }
+
     @media only screen and (max-width: 700px) {
         font-size: bkscale($font__h2--font-size, 0.78);
         line-height: bkscale($font__h2--line-height, 0.78);
@@ -84,6 +99,16 @@ h2 {
     .columns-two-left & {
         font-size: $font__h3--font-size;
         line-height: $font__h3--line-height;
+
+        @media only screen and (max-width: 860px) {
+            font-size: bkscale($font__h3--font-size, 0.75);
+            line-height: bkscale($font__h3--line-height, 0.75);
+        }
+
+        @media only screen and (max-width: 700px) {
+            font-size: bkscale($font__h3--font-size, 0.7);
+            line-height: bkscale($font__h3--line-height, 0.7);
+        }
     }
 }
 
@@ -95,6 +120,11 @@ h3 {
     @media only screen and (max-width: 1024px) {
         font-size: bkscale($font__h3--font-size, 0.85);
         line-height: bkscale($font__h3--line-height, 0.85);
+    }
+
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__h3--font-size, 0.75);
+        line-height: bkscale($font__h3--line-height, 0.75);
     }
 
     @media only screen and (max-width: 700px) {
@@ -109,7 +139,7 @@ ol,
 li,
 .p-font {
     color: $color__p--text;
-    font-family: $font__body--font-family;
+    font-family: $row-font-secondary;
     font-size: $font__body--font-size;
     font-weight: $font__body--font-weight;
     letter-spacing: $font__body--letter-spacing;
@@ -119,6 +149,11 @@ li,
     @media only screen and (max-width: 1024px) {
         font-size: bkscale($font__p--font-size, 0.95);
         line-height: bkscale($font__p--line-height, 0.95);
+    }
+
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__p--font-size, 0.925);
+        line-height: bkscale($font__p--line-height, 0.925);
     }
 
     @media only screen and (max-width: 700px) {
@@ -148,7 +183,7 @@ b {
 
 // Anchor links
 a {
-    font-family: $font__body--font-family;
+    font-family: $row-font-secondary;
     text-decoration: none;
     transition: all .5s ease-in-out;
 
@@ -259,6 +294,7 @@ a {
     .phone-number-link {
         border-radius: 0;
         display: block;
+        font-family: $row-font-secondary;
         font-size: 18px;
         line-height: 1;
         padding: 20px 15px;
@@ -334,7 +370,6 @@ blockquote {
     }
 
 
-
     h1,h2,h3,h4, p {
         margin-bottom: 0;
         padding-bottom: 0;
@@ -353,6 +388,12 @@ blockquote {
     .widget .bk-content-text,
     .widget .content {
         min-height: 20px!important;
+    }
+
+    .responsivecolumns .column:first-child {
+        @media #{$mobile} {
+            margin-bottom: 10px;
+        }
     }
 
 
