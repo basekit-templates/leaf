@@ -10,7 +10,7 @@
 
 
     p, ul, li, ol, .p-font {
-        color: transparentize($row-color-dark, 0.4);
+        color: transparentize($row-color-dark, 0.3);
     }
 
 
@@ -137,7 +137,7 @@
 }
 
 
-.row--style-light.row--style-background-type-image {
+.row--style-light.row--background-type-image {
 
 
     &:after {
@@ -152,7 +152,7 @@
 
 
     p, ul, li, ol, .p-font {
-        color: lighten($row-color-dark, 65%);
+        color: $row-color-dark;
     }
 
     .button {

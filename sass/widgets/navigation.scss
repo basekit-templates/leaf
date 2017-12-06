@@ -206,7 +206,7 @@
 		position: relative;
         top: 0;
 		z-index: 100000;
-		background-color: transparent;
+		background-color: transparent!important;
 
 		&:before {
 			top: 20px;

@@ -24,10 +24,13 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: "acta-display", georgia, serif;
-    padding-bottom: 14px;
+    font-family: $row-font-primary;
+    font-weight: $font__heading--font-weight;
+    letter-spacing: $font__heading--letter-spacing;
+    padding-bottom: 3px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    text-transform: $font__heading--text-transform;
 }
 
 
@@ -38,6 +41,11 @@ h1 {
     @media only screen and (max-width: 1024px) {
         font-size: bkscale($font__h1--font-size, 0.85);
         line-height: bkscale($font__h1--line-height, 0.85);
+    }
+
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__h1--font-size, 0.75);
+        line-height: bkscale($font__h1--line-height, 0.75);
     }
 
     @media only screen and (max-width: 700px) {
@@ -51,14 +59,19 @@ h1 {
         line-height: $font__h2--line-height;
 
         @media only screen and (max-width: 1024px) {
-            font-size: bkscale($font__h1--font-size, 0.85);
-            line-height: bkscale($font__h1--line-height, 0.85);
+            font-size: bkscale($font__h2--font-size, 0.9);
+            line-height: bkscale($font__h2--line-height, 0.9);
+        }
+
+        @media only screen and (max-width: 860px) {
+            font-size: bkscale($font__h2--font-size, 0.75);
+            line-height: bkscale($font__h2--line-height, 0.75);
         }
 
         @media only screen and (max-width: 700px) {
-            font-size: bkscale($font__h1--font-size, 0.58);
-            line-height: bkscale($font__h1--line-height, 0.58);
-        }
+        font-size: bkscale($font__h2--font-size, 0.78);
+        line-height: bkscale($font__h2--line-height, 0.78);
+    }
     }
 }
 
@@ -72,6 +85,11 @@ h2 {
         line-height: bkscale($font__h2--font-size, 0.9);
     }
 
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__h2--font-size, 0.75);
+        line-height: bkscale($font__h2--line-height, 0.75);
+    }
+
     @media only screen and (max-width: 700px) {
         font-size: bkscale($font__h2--font-size, 0.78);
         line-height: bkscale($font__h2--line-height, 0.78);
@@ -81,6 +99,16 @@ h2 {
     .columns-two-left & {
         font-size: $font__h3--font-size;
         line-height: $font__h3--line-height;
+
+        @media only screen and (max-width: 860px) {
+            font-size: bkscale($font__h3--font-size, 0.75);
+            line-height: bkscale($font__h3--line-height, 0.75);
+        }
+
+        @media only screen and (max-width: 700px) {
+            font-size: bkscale($font__h3--font-size, 0.7);
+            line-height: bkscale($font__h3--line-height, 0.7);
+        }
     }
 }
 
@@ -92,6 +120,11 @@ h3 {
     @media only screen and (max-width: 1024px) {
         font-size: bkscale($font__h3--font-size, 0.85);
         line-height: bkscale($font__h3--line-height, 0.85);
+    }
+
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__h3--font-size, 0.75);
+        line-height: bkscale($font__h3--line-height, 0.75);
     }
 
     @media only screen and (max-width: 700px) {
@@ -106,19 +139,32 @@ ol,
 li,
 .p-font {
     color: $color__p--text;
-    font-family: "questa-sans", helvetica neue, sans-serif;
-    font-size: $font__p--font-size;
-    line-height: $font__p--line-height;
+    font-family: $row-font-secondary;
+    font-size: $font__body--font-size;
+    font-weight: $font__body--font-weight;
+    letter-spacing: $font__body--letter-spacing;
+    line-height: $font__body--line-height;
+    text-transform: $font__body--text-transform;
 
     @media only screen and (max-width: 1024px) {
         font-size: bkscale($font__p--font-size, 0.95);
         line-height: bkscale($font__p--line-height, 0.95);
     }
 
+    @media only screen and (max-width: 860px) {
+        font-size: bkscale($font__p--font-size, 0.925);
+        line-height: bkscale($font__p--line-height, 0.925);
+    }
+
     @media only screen and (max-width: 700px) {
         font-size: bkscale($font__p--font-size, 0.88);
         line-height: bkscale($font__p--line-height, 0.88);
     }
+}
+
+
+b {
+    font-weight: normal;
 }
 
 
@@ -137,7 +183,7 @@ li,
 
 // Anchor links
 a {
-    font-family: "questa-sans", helvetica neue, sans-serif;
+    font-family: $row-font-secondary;
     text-decoration: none;
     transition: all .5s ease-in-out;
 
@@ -181,7 +227,7 @@ a {
     // background-color: $color__button--background;
     border-radius: 80px;
     // color: $color__button--text;
-    font-family: "questa-sans", helvetica neue, sans-serif;;
+    font-family: $font__button--font-family;
     font-size: $font__button--font-size;
     font-weight: $font__button--font-weight;
     letter-spacing: $font__button--letter-spacing;
@@ -216,7 +262,7 @@ a {
 
 
     &:before {
-        background: $color__button--background--hover;
+        // background: $color__button--background--hover;
         border-radius: 80px;
         content: "";
         position: absolute;
@@ -248,6 +294,7 @@ a {
     .phone-number-link {
         border-radius: 0;
         display: block;
+        font-family: $row-font-secondary;
         font-size: 18px;
         line-height: 1;
         padding: 20px 15px;
@@ -265,7 +312,7 @@ a {
 
 // Add extra padding to button when following a content widget
 [data-name="content"] + [data-name="button"] {
-    padding-top: 24px;
+    padding-top: 6px;
 }
 
 
@@ -316,6 +363,12 @@ blockquote {
 
 #page-zones__header {
 
+    .responsivecolumns .column,
+    .widget .bk-content-text,
+    .widget .content {
+        min-height: 20px!important;
+    }
+
 
     h1,h2,h3,h4, p {
         margin-bottom: 0;
@@ -323,12 +376,25 @@ blockquote {
     }
 
     h3 {
-        font-size: 28px;
+        font-size: 26px;
+        line-height: 26px;
     }
 }
 
 
 #page-zones__footer {
+
+    .responsivecolumns .column,
+    .widget .bk-content-text,
+    .widget .content {
+        min-height: 20px!important;
+    }
+
+    .responsivecolumns .column:first-child {
+        @media #{$mobile} {
+            margin-bottom: 10px;
+        }
+    }
 
 
     h1,h2,h3,h4, p {
