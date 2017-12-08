@@ -101,7 +101,7 @@
     }
 }
 
-.row--style-background-type-image.row--style-accent {
+.row--background-type-image.row--style-accent {
     &:after {
         content: "";
         position: absolute;
@@ -114,7 +114,7 @@
 
 
     p, ul, li, ol, .p-font {
-        color: lighten($row-color-light, 65%);
+        color: $row-color-light;
     }
 
     .button {
