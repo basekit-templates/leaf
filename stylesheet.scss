@@ -33,3 +33,9 @@ $style-set-id: 'example_04' !default;
 // Widgets
 @import "sass/widgets/form";
 @import "sass/widgets/social";
+
+
+#page-zones__header,
+#page-zones__footer {
+    min-height: 0!important;;
+}
