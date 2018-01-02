@@ -23,8 +23,10 @@ body {
 h1,
 h2,
 h3,
-h4 {
-    font-family: $row-font-primary;
+h4,
+h5,
+h6 {
+    // font-family: $font__heading--font-family;
     font-weight: $font__heading--font-weight;
     letter-spacing: $font__heading--letter-spacing;
     padding-bottom: 3px;
@@ -53,26 +55,6 @@ h1 {
         line-height: bkscale($font__h1--line-height, 0.58);
     }
 
-
-    [data-name="row"]:nth-child(2) & {
-        font-size: $font__h2--font-size;
-        line-height: $font__h2--line-height;
-
-        @media only screen and (max-width: 1024px) {
-            font-size: bkscale($font__h2--font-size, 0.9);
-            line-height: bkscale($font__h2--line-height, 0.9);
-        }
-
-        @media only screen and (max-width: 860px) {
-            font-size: bkscale($font__h2--font-size, 0.75);
-            line-height: bkscale($font__h2--line-height, 0.75);
-        }
-
-        @media only screen and (max-width: 700px) {
-        font-size: bkscale($font__h2--font-size, 0.78);
-        line-height: bkscale($font__h2--line-height, 0.78);
-    }
-    }
 }
 
 
@@ -139,7 +121,7 @@ ol,
 li,
 .p-font {
     color: $color__p--text;
-    font-family: $row-font-secondary;
+    // font-family: $font__body--font-family;
     font-size: $font__body--font-size;
     font-weight: $font__body--font-weight;
     letter-spacing: $font__body--letter-spacing;
@@ -183,7 +165,7 @@ b {
 
 // Anchor links
 a {
-    font-family: $row-font-secondary;
+    // font-family: $font__body--font-family;
     text-decoration: none;
     transition: all .5s ease-in-out;
 
