@@ -71,21 +71,12 @@
         color: transparentize($row-color-light, 0.35);
     }
 
-    .navigation-toggle,
-    .navigation-toggle:before,
-    .navigation-toggle:after {
+    .navigation-toggle span,
+    .navigation-toggle span:before,
+    .navigation-toggle span:after {
         background-color: transparentize($row-color-light, 0.3);
     }
 
-
-    .phone-number-link {
-        color: transparentize($row-color-light, 0.2);
-
-        @media #{$mobile} {
-            background-color: $row-color-accent;
-            color: $row-color-light;
-        }
-    }
 
     .social-link {
         color: $row-color-light;

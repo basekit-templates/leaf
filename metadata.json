@@ -125,17 +125,6 @@
             "font__companyname--letter-spacing": "0px",
             "color__companyname--text": "#2B2B3C"
         },
-        "navigation": {
-            "font__navigation--font-family": "@font-swatch5-font-family",
-            "font__navigation--font-size": "18px",
-            "font__navigation--font-weight": "400",
-            "font__navigation--line-height": "22px",
-            "font__navigation--letter-spacing": "0px",
-            "color__navigation--background": "#ffffff",
-            "color__navigation--text": "#2B2B3C",
-            "color__navigation--text--hover": "#2B2B3C",
-            "color__navigation--text--selected": "#2B2B3C"
-        },
         "header": {
             "color__header--background": "#ffffff"
         },

@@ -28,9 +28,9 @@
         border-top-color: darken($row-color-light, 35%);
     }
 
-    .navigation-toggle,
-    .navigation-toggle:before,
-    .navigation-toggle:after {
+    .navigation-toggle span,
+    .navigation-toggle span:before,
+    .navigation-toggle span:after {
         background-color: transparentize($row-color-light, 0.3);
     }
 
@@ -87,16 +87,6 @@
         &:before {
             background-color: darken($row-color-light, 2%);
             box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
-        }
-    }
-
-
-    .phone-number-link {
-        color: transparentize($row-color-light, 0.2);
-
-        @media #{$mobile} {
-            background-color: $row-color-light;
-            color: $row-color-accent;
         }
     }
 }
