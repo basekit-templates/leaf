@@ -29,7 +29,6 @@ h6 {
     // font-family: $font__heading--font-family;
     font-weight: $font__heading--font-weight;
     letter-spacing: $font__heading--letter-spacing;
-    padding-bottom: 3px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     text-transform: $font__heading--text-transform;
@@ -114,6 +113,22 @@ h3 {
         line-height: bkscale($font__h3--line-height, 0.7);
     }
 }
+
+
+#page-zones__header,
+#page-zones__footer {
+
+    h1,
+    h2,
+    h3 {
+        font-size: ($font__h3--font-size / 1.25);
+
+        @media #{$mobile} {
+            font-size: ($font__h3--font-size / 1.5);
+        }
+    }
+}
+
 
 p,
 ul,
@@ -311,54 +326,6 @@ blockquote {
         @media #{$mobile} {
             font-size: 86px;
             top: 5px;
-        }
-    }
-}
-
-
-
-#page-zones__header {
-
-    .responsivecolumns .column,
-    .widget .bk-content-text,
-    .widget .content {
-        min-height: 0;
-    }
-
-
-    h1,h2,h3,h4, p {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-
-    h3 {
-        font-size: 26px;
-        line-height: 26px;
-    }
-}
-
-
-#page-zones__footer {
-
-    .responsivecolumns .column,
-    .widget .bk-content-text,
-    .widget .content {
-        min-height: 0;
-    }
-
-    .responsivecolumns .column:not(:last-child) {
-        @media #{$mobile} {
-            margin-bottom: 10px;
-        }
-    }
-
-
-    h1,h2,h3,h4,p,li {
-        margin-bottom: 0;
-        padding-bottom: 0;
-
-        @media #{$mobile} {
-            text-align: center;
         }
     }
 }

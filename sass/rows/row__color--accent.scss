@@ -38,12 +38,16 @@
     h1,
     h2,
     h3,
+    h4,
+    h5,
+    h6,
     label {
         color: $row-color-light;
     }
 
 
-    p {
+    p,
+    .phone-number-link {
         color: #ecebe6;
     }
 
