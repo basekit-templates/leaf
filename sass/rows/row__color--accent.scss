@@ -47,7 +47,8 @@
 
 
     p,
-    .phone-number-link {
+    .phone-number-link,
+    [data-name="content"] {
         color: #ecebe6;
     }
 

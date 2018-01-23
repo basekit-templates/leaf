@@ -15,7 +15,7 @@
     }
 
 
-    p, ul, li, ol, .p-font, .phone-number-link {
+    p, ul, li, ol, .p-font, .phone-number-link, [data-name="content"] {
         color: transparentize($row-color-light, 0.2);
     }
 
