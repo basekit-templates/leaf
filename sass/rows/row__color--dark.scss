@@ -4,12 +4,18 @@
     background-color: $row-color-dark;
 
 
-    h1,h2,h3,h4,label {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    label {
         color: $row-color-light;
     }
 
 
-    p, ul, li, ol, .p-font {
+    p, ul, li, ol, .p-font, .phone-number-link, [data-name="content"] {
         color: transparentize($row-color-light, 0.2);
     }
 

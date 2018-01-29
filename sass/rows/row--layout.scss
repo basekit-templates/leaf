@@ -11,22 +11,14 @@
 
 
 // Width
-$width__contained: 960px;
-$width__wide: 1200px;
-$width__full: 100%;
-$width__contained--padding: 30px;
-$width__wide--padding: 30px;
-$width__full--padding: 60px;
+$height--no-padding: 0;
+$height--thin: 15px;
+$height--default: 80px;
+$height--full: 100px;
 
-
-// Height
-$height__thin: auto;
-$height__default: auto;
-$height__full: 100vh;
-$height__no--padding: 0;
-$height__thin--padding: 15px;
-$height__default--padding: 65px;
-$height__full--padding: 85px;
+$width--contained: 30px;
+$width--wide: 40px;
+$width--full: 30px;
 
 
 
