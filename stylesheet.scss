@@ -41,7 +41,42 @@ $height--full: 100px;
 @import "sass/widgets/social";
 
 
+[data-name="content"] +,
+[data-name="contentgroup"] + {
+
+
+    [data-name="responsivecolumns"] {
+        padding-top: 40px;
+    }
+}
+
+
+[data-name="content"] +,
+[data-name="contentgroup"] + {
+
+
+    [data-name="image"] {
+        padding-top: 20px;
+    }
+}
+
+
+[data-name="image"] + {
+
+    [data-name="content"],
+    [data-name="contentgroup"] {
+        padding-top: 20px;
+    }
+}
+
+
 #page-zones__header,
 #page-zones__footer {
     min-height: 0!important;
+}
+
+#page-zones__footer [data-name="content"] {
+    p, a, li {
+        font-size: $font__body--font-size / 1.1;
+    }
 }

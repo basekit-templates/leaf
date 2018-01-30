@@ -161,6 +161,15 @@ li,
 }
 
 
+ul {
+    padding-left: 0;
+}
+
+
+[data-name="content"] ul {
+    padding-left: 40px;
+}
+
 b {
     font-weight: normal;
 }
