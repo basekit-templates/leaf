@@ -15,6 +15,12 @@ $style-set-id: 'example_04' !default;
 @import 'style-sets';
 
 
+// Demo Stuff
+$height--thin: 20px;
+$height--default: 100px;
+$height--full: 100px;
+
+
 // Framework
 @import "bk-sass-framework-v8";
 
