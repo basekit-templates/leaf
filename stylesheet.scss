@@ -17,7 +17,7 @@ $style-set-id: 'example_04' !default;
 
 // Demo Stuff
 $height--thin: 20px;
-$height--default: 100px !important;
+$height--default: 80px;
 $height--full: 100px;
 
 
@@ -67,6 +67,12 @@ $height--full: 100px;
     [data-name="contentgroup"] {
         padding-top: 20px;
     }
+}
+
+
+.row--height-large {
+    min-height: 700px;
+    padding: $height--default;
 }
 
 
