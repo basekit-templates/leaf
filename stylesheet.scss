@@ -55,7 +55,8 @@ $height--full: 100px;
 [data-name="contentgroup"] + {
 
 
-    [data-name="image"] {
+    [data-name="image"],
+    [data-name="gallery"] {
         padding-top: 20px;
     }
 }
@@ -82,8 +83,11 @@ $height--full: 100px;
     min-height: 0!important;
 }
 
+#page-zones__header [data-name="content"],
+#page-zones__header [data-name="clicktocall"],
+#page-zones__header [data-name="extendednavigation"],
 #page-zones__footer [data-name="content"] {
-    p, a, li {
+    p, a, li, .label {
         font-size: $font__body--font-size / 1.1;
     }
 }
