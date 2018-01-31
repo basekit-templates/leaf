@@ -107,6 +107,7 @@ $height--full: 100px;
 
 .signupform__form-body {
     @include flex-display;
+    @include align-items(flex-end);
     @include justify-content(center);
 
      @media only screen and (max-width: 700px) {

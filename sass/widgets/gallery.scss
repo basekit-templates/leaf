@@ -7,44 +7,16 @@
 .gallery-list {
     @include flex-display;
     @include flex-wrap(wrap);
-    @include justify-content(space-between);
 
     @media #{$tablet} {
         padding: 0;
-    }
-
-    @media only screen and (max-width: 700px) {
-        .gallery-item:first-child {
-            margin-top: 0;
-        }
-
-
-        .gallery-item:last-child {
-            margin-bottom: 0;
-        }
     }
 }
 
 
 .gallery-item {
-    // .flex-basis(31%);
-    @include flex(1 1 auto);
-    margin: 40px 20px;
     transform: scale(1);
     transition: transform .35s ease;
-
-    @media #{$tablet} {
-        @include flex-basis(47.5%);
-        max-width: 47.5%;
-        margin: 20px 0;
-    }
-
-    @media only screen and (max-width: 700px) {
-        @include flex-basis(100%);
-        max-width: 100%;
-        margin: 20px 0;
-    }
-
 
     &:hover {
         transform: scale(1.03);
