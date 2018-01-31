@@ -91,3 +91,54 @@ $height--full: 100px;
         font-size: $font__body--font-size / 1.1;
     }
 }
+
+
+
+//  Layout - Gallery 2
+// -----------------------------
+
+
+.gallery-list {
+    @include flex-display;
+    @include flex-wrap(wrap);
+}
+
+
+.gallery-item {
+    @include flex(1 1 auto);
+    @include flex-basis(22.5%);
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+
+
+    &:nth-child(n+5) {
+        margin-top: 20px;
+    }
+
+    @media #{$tablet--landscape} {
+        @include flex-basis(30%);
+        margin-left: 1.11%;
+        margin-right: 1.11%;
+
+
+        &:nth-child(n+4) {
+            margin-top: 20px;
+        }
+    }
+
+    @media #{$mobile} {
+        @include flex-basis(45%);
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+
+
+        &:nth-child(n+3) {
+            margin-top: 20px;
+        }
+
+
+        &:nth-last-child {
+            margin-bottom: 0;
+        }
+    }
+}
