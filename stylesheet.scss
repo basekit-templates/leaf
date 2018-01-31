@@ -70,9 +70,10 @@ $height--full: 100px;
 }
 
 
-.row--height-large {
+.row--height-large .row__container {
     min-height: 700px;
-    padding: $height--default;
+    padding-top: $height--default;
+    padding-bottom: $height--default;
 }
 
 
