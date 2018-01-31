@@ -103,11 +103,21 @@ $height--full: 100px;
 
 #page-zones__header [data-name="content"],
 #page-zones__header [data-name="clicktocall"],
-#page-zones__header [data-name="extendednavigation"],
 #page-zones__footer [data-name="content"] {
     p, a, li, .label {
         font-size: $font__body--font-size / 1.1;
     }
+}
+
+#page-zones__header [data-name="extendednavigation"] {
+    p, a, li, .label {
+        font-size: $font__body--font-size / 1.05;
+    }
+}
+
+
+.row--hero-3 .contentgroup__heading {
+    text-align: left!important;
 }
 
 
