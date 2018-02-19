@@ -6,9 +6,6 @@
     "screenshot": "screenshot.jpg",
     "templateType": "standard",
     "pageTypes": ["home"],
-    "images":[
-        "images/feature.jpg"
-    ],
     "colorSwatches":
     {
         "Swatch 1": {
