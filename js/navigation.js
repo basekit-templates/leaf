@@ -1,5 +1,4 @@
-
-// Custom Toggle
-$(document).on("click", ".navigation-toggle", function() {
-    $( "body" ).toggleClass( "navigation-open" );
+var navigationToggle = document.querySelector('.navigation-toggle');
+navigationToggle.addEventListener('click', function () {
+    document.body.classList.toggle('navigation-open');
 });
