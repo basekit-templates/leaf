@@ -17,17 +17,18 @@
 
     <body class="{{ page.backgroundClass }}" {% if page.isRTLLanguage %}dir="rtl"{% endif %}>
 
-
         {% block content %}
         {% endblock %}
 
-
         {% include basekit.bodyScript %}
 
-
-        <!-- Navigation Toggle JS -->
-         <script src="{{ asset('js/navigation.js')}}"></script>
-
+        <!-- Navigation Toggle -->
+        <script>
+            var navigationToggle = document.querySelector('.navigation-toggle');
+            navigationToggle.addEventListener('click', function () {
+                document.body.classList.toggle('navigation-open');
+            });
+        </script>
 
         <!-- Page Specific Scripts -->
         {% block scripts %}
